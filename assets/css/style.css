@@ -201,7 +201,7 @@ main .btn:hover{
     background-size: cover;
     z-index: 2;
     width: 100%;
-    height: 70vh;
+    height: 50vh;
 }
 
 
@@ -232,7 +232,46 @@ main .btn:hover{
     font-size: 15px;
 }
 
+.projects{
+    background: rgba(0,0,0,0.95);
+    background-size: cover;
+    z-index: 2;
+    width: 100%;
+    height: 150vh;
+}
 
+.projects h3{
+    color: #0080ca;
+}
+
+.projects .cont {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 5px;
+}
+.projects .cont .project{
+    width: 300px;
+    height: 400px;
+    color: #fff;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.233)  ;
+    backdrop-filter: blur(20px);
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.85);
+    
+}
+.projects .cont .project small{
+    font-size: 11px;
+    width: 80%;
+}
+.projects .cont .project a{
+    position: relative  ;
+    top: 30px;
+}
+.projects .cont .project img{
+    max-width: 300px;
+    height: auto;
+}
 @media screen and (min-width:320px) and (max-width:800px){
     .wrapper{
         height: 84vh;
@@ -266,4 +305,13 @@ main .btn:hover{
     height: 90vh;
     background-color: rgba(0,0,0,0.85);
    }
+   .projects     {
+    height: 505vh;
+   }
+   .projects .cont {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 5px;
+}
 }
