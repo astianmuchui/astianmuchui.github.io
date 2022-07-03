@@ -1,0 +1,269 @@
+/* Globals */
+*{
+    padding: 0;
+    box-shadow: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    list-style-type: none;
+    text-decoration: none;
+    
+}
+html{
+        scroll-behavior: smooth;
+
+}
+::-webkit-scrollbar{
+    width: 2px;
+    background: black;
+}
+::-webkit-scrollbar-thumb{
+    width: 2px;
+    background: var(--primary-color);
+}
+:root{
+    --primary-color: #0080ca;
+    --dark: rgb(20, 20, 20);
+    --light: rgb(223, 223, 223);
+}
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: url("../img/pc-g02747a39b_1920.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -2;
+    background-attachment: fixed;
+}
+
+.wrapper{
+    background: rgba(0,0,0,0.95);
+    background-size: cover;
+    z-index: 2;
+    width: 100%;
+    height: 100vh; /* For now*/
+
+}
+
+.wrapper main{
+    height: 100vh;
+    width: 100%;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+main .intro {
+    position: relative;
+    /* left: -280px; */
+}
+main .intro .name{
+    color: var(--primary-color);
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 500    ;  
+    opacity: 0;
+    position: relative;
+    animation: fadeUp 1s ease-in 1 forwards;
+    animation-delay: 1s;
+}
+
+main .intro h4{
+    color: #fff;
+    font-weight: 100;
+    opacity: 0;
+    position: relative;
+    animation: fadeUp 1s ease-in 1 forwards;
+    animation-delay: 1.5s;
+}
+main .intro .links-grid a i{
+    opacity: 0;
+    position: relative;
+    animation: appear 1s ease-in 1 forwards;
+    animation-delay: 2.5s;
+    color: #fff;
+    border: 1px solid var(--primary-color);
+    background: var(--primary-color);
+    padding: 10px;
+    border-radius: 50%;
+    margin: 10px;
+    font-size: 15px;
+}
+
+main .intro .links-grid a i:hover{
+    transition: all 3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    transform: translateY(-3px);
+}
+
+main .btn{
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+    margin-top: 15px;
+    font-size: 14px;
+    position: relative;
+    opacity: 0;
+    animation: slideleft 1.5s ease-in 1 forwards;
+    animation-delay: 3.2s;
+}
+main .btn:hover{
+    transition: all 3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    transform: translateY(-10px);
+}
+.btn{
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+    margin-top: 15px;
+    font-size: 14px;
+    position: relative;
+}
+
+@keyframes fadeUp{
+    0%{
+        opacity: 0;
+        top: 10px;
+    }
+    100%{
+        opacity: 1;
+        top: 0;
+    }
+}
+
+@keyframes appear{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes slideleft{
+    0%{
+        opacity: 0;
+        left: -50px;
+    }
+    100%{
+        opacity: 1;
+        left: 0;
+    }
+}
+
+.about{
+    background: rgba(0,0,0,0.95);
+    background-size: cover;
+    z-index: 2;
+    width: 100%;
+    height: 72vh;
+}
+.about h3{
+    color: var(--primary-color);
+    font-size: 19px;
+    text-transform: uppercase;
+}
+.about p{
+    text-align: center;
+    color: #fff;
+    width: 50%;
+    font-size: 14px;
+    line-height: 2rem;
+    padding: 10px;
+}
+.about p:nth-child(2) ul li{
+    width: 60%;
+    color: #fff;
+    line-height: 2rem;
+    padding: 10px;
+}
+.skill li{
+    color: #fff;
+
+}
+.skill li span{
+    color: var(--primary-color);
+    font-weight: 900;
+    font-size: 19px;
+}
+.tech{
+    background: rgba(0,0,0,0.95);
+    background-size: cover;
+    z-index: 2;
+    width: 100%;
+    height: 70vh;
+}
+
+
+.tech h3{
+    color: var(--primary-color);
+    font-size: 19px;
+    text-transform: uppercase;
+}
+
+
+.tech ul li{
+    list-style-type: square;
+    color: var(--light);
+}
+
+
+.contact{
+    background: rgba(0,0,0,0.95); 
+    color: #0080ca;  
+}
+.contact .links-grid a i{
+    color: #fff;
+    border: 1px solid var(--primary-color);
+    background: var(--primary-color);
+    padding: 10px;
+    border-radius: 50%;
+    margin: 10px;
+    font-size: 15px;
+}
+
+
+@media screen and (min-width:320px) and (max-width:800px){
+    .wrapper{
+        height: 84vh;
+        background-color: rgba(0,0,0,0.85);
+    }
+    section{
+        background-color: rgba(0,0,0,0.85);
+                
+    }
+    .intro {
+        left: 2%;
+    }
+    .intro .name{
+         font-size: 18px;   
+    }
+   .about{
+    height: 80vh;
+    background-color: rgba(0,0,0,0.85);
+   }
+   .about p{
+    width: 85%;
+    text-align: center;
+   }
+   .about p:nth-child(2){
+        width: 85%;
+   }
+   .skill{
+    width: 85%;
+   }
+   .tech{
+    height: 90vh;
+    background-color: rgba(0,0,0,0.85);
+   }
+}
