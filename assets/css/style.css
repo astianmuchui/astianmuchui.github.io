@@ -305,13 +305,13 @@ main .btn:hover{
     height: 90vh;
     background-color: rgba(0,0,0,0.85);
    }
-   .projects{
-    height: max-content;
-    padding-bottom: 20px;
-    padding-top: 30px;
+   .projects {
+        height: max-content;
+        padding-top: 30px;
+        padding-bottom: 20px;
    }
    .projects .cont {
-    width: 80%;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(1,1fr);
     grid-gap: 5px;
