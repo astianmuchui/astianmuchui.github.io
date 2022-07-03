@@ -307,7 +307,8 @@ main .btn:hover{
    }
    .projects{
     height: max-content;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
+    padding-top: 30px;
    }
    .projects .cont {
     width: 80%;
