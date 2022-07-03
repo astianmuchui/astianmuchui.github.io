@@ -306,7 +306,7 @@ main .btn:hover{
     background-color: rgba(0,0,0,0.85);
    }
    .projects     {
-    height: 400vh;
+    height: 350vh;
    }
    .projects .cont {
     width: 80%;
