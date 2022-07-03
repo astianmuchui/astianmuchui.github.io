@@ -305,8 +305,9 @@ main .btn:hover{
     height: 90vh;
     background-color: rgba(0,0,0,0.85);
    }
-   .projects     {
-    height: 300vh;
+   .projects{
+    height: max-content;
+    padding-bottom: 10px;
    }
    .projects .cont {
     width: 80%;
