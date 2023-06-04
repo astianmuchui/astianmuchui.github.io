@@ -267,9 +267,16 @@ body
               }
               footer
               {
-                width: 70%;
+
+                width: 100%;
                 height: max-content;
                 padding-bottom: 30px;
+
+                p
+                {
+                    width: 70%;
+                    height: max-content;
+                }
               }
        }
     }
