@@ -217,6 +217,7 @@ body
         height: 160vh;
         @extend .y-start;
 
+
         .grid-container
         {
             width: 90%;
@@ -224,8 +225,10 @@ body
 
         h3
         {
-            position: relative;     
-        }
+            width: 90%;
+            text-align: center;
+            opacity: 0.8;
+        } 
 
         .grid-container
         {
@@ -265,7 +268,7 @@ body
                 {
                     margin-top: 5px;
 
-                    font-size: 8px;
+                    font-size: 10px;
                     opacity: 0.5;
                     line-height: 21px;
                 }
@@ -286,14 +289,14 @@ body
                     font-size: 12px;
                     opacity: 0.6;
                     color: $primary-color;
-                    width: 25%;
+                    width: max-content;
                     display: inline-flex;
                     justify-content: space-between;
 
                     i
                     {
-                        margin-top: 4px;
-                        margin-left: 4px;
+                        margin-top: 3px;
+                        margin-left: 5px;
                         width: 10%;
                     }
 
@@ -524,13 +527,23 @@ body
             {
                 text-align: start;
                 position: relative;
-                left: -55%;
+                left: 0;
+                box-sizing: border-box;
+                padding-left: 5px;
                 height: 5%;
             }
 
             .grid-container
             {
                 height: max-content;
+
+                .post
+                {
+                    p
+                    {
+                        font-size: 10px;
+                    }
+                }
             }
 
 
@@ -553,11 +566,68 @@ body
             h4
             {
                 margin-bottom: 20px;
-
-                font-size: 10px;
-                width: 80%;
+                font-size: 16px;
+                width: 90%;
             }
         }
-
+        .contact
+        {
+            height: 80vh;
+    
+            h1
+            {
+                font-weight: 100;
+                font-size: 18px;
+                margin-bottom: 2%;
+            }
+    
+            .form
+            {
+                @extend .shadowed;
+                box-sizing: border-box;
+                padding: 8%;
+                border-radius: 10px;
+                width: 95%;
+    
+                form
+                {
+                    margin-top: 10px;
+    
+    
+                    input
+                    {
+                        border-radius: 10px;
+                        width: 100%;
+                        padding: 2% 5%;
+                        margin-bottom: 4%;
+                        border: 1px solid $primary-color;
+                        outline: none;
+                        font-size: 10px;
+                        height: 40px;
+    
+    
+                    }
+    
+                    ::placeholder
+                    {
+                        font-size: 10px;
+                    }
+    
+                    textarea
+                    {
+                        font-size: 12px;
+                        width: 100%;
+                        padding: 4% 5%;
+                        margin-bottom: 2%;
+                        border-radius: 10px;
+                        border: 1px solid $primary-color;
+                        outline: none;
+                        height: 120px;
+                    }
+                }
+            }
+        }
     }
+
+
 }
