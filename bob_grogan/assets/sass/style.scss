@@ -96,7 +96,7 @@ body
             .text
             {
                 @extend .y-start, .x-start;
-                background-image: url("../img/blob.png");
+                // background-image: url("../img/blob.png");
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: 70%;
@@ -383,6 +383,7 @@ body
                     border: 1px solid $primary-color;
                     outline: none;
                     font-size: 10px;
+                    background-color: transparent;
 
 
                 }
@@ -402,6 +403,8 @@ body
                     border: 1px solid $primary-color;
                     outline: none;
                     height: 120px;
+                    background-color: transparent;
+
                 }
             }
         }
