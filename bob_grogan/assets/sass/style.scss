@@ -280,11 +280,15 @@ body
                     font-size: 12px;
                     opacity: 0.6;
                     color: $primary-color;
-                    width: max-content;
+                    width: 21%;
+                    display: inline-flex;
+                    justify-content: space-between;
 
                     i
                     {
-                        margin-left: 2px;
+                        margin-top: 4px;
+                        margin-left: 4px;
+                        width: 10%;
                     }
 
                     &:hover
