@@ -224,11 +224,8 @@ body
 
         h3
         {
-            align-self: flex-start;
             position: relative;
-            left: 6.5%;
-            padding-top: 1%;
-            border-top: 3px solid $primary-color;
+            margin-left: 50%;
         }
 
         .grid-container
@@ -274,13 +271,23 @@ body
                     line-height: 21px;
                 }
 
+                h4
+                {
+                    
+                    a
+                    {
+                        width: 90%;
+                        font-size: 15px;
+                    }
+                }
+
                 a
                 {
                     margin-top: 10px;
                     font-size: 12px;
                     opacity: 0.6;
                     color: $primary-color;
-                    width: 21%;
+                    width: 25%;
                     display: inline-flex;
                     justify-content: space-between;
 
@@ -415,7 +422,7 @@ body
 
                 p
                 {
-                    width: 90%;
+                    width: 80%;
                     font-size: 1.5rem;
                     margin-bottom: 10px;
                 }
