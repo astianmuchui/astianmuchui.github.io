@@ -18,7 +18,7 @@ function handleScroll()
                 header.style.backgroundColor = '#181842';
                 nav.style.backgroundColor = '#181842'; /* Change the dropdown list background as well */
                 header.classList.add("shadowed");
-                menu.style.zIndex = "998";
+                menu.style.zIndex = "999";
         }
         
         else
