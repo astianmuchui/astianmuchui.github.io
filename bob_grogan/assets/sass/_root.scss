@@ -877,9 +877,15 @@ body
             top: 0;
             z-index: 999;
 
+            p
+            {
+                width: 50%;
+            }
+
+
             nav
             {
-                width: 95%;
+                width: 50%;
                 // border: 1px solid orangered;
 
                 .hamburger
@@ -887,7 +893,7 @@ body
                     display: flex;
                     position: relative;
                     left: 85%;
-                    top: 20%;
+                    top: 10%;
                 }
 
                 ul
