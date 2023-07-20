@@ -388,6 +388,11 @@ body
 
                 }
 
+                input[type="submit"]
+                {
+                    background-color: $primary-color;
+                }
+
                 ::placeholder
                 {
                     font-size: 10px;
