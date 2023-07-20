@@ -1,3 +1,13 @@
+
+/**
+* Bob grogan consulting
+* Utility classes and theme file
+* Written By: Sebastian Muchui
+* astianmuchui@gmail.com
+* https://github.com/astianmuchui
+* google - sebastian muchui
+*/
+
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
 $primary-color: #181842;
@@ -638,8 +648,8 @@ body
             height: 20px;
             @extend .flex-column;
             position: relative;
-            top: 15%;
-            left: 8%;
+            top: 13%;
+            left: 80%;
             box-sizing: content-box;
             background-color: $white;
             border-radius: 50%;
@@ -665,7 +675,7 @@ body
                 a, span
                 {
                     color: $white;
-                    font-size: 0.8rem;
+                    font-size: 0.9rem;
                     height: 20px;
                     padding-bottom: 5px;
                     
@@ -771,7 +781,7 @@ body
 
                 *
                 {
-                    font-size: smaller;
+                    font-size: 13px;
                     margin: 5px 0;
                 }
 

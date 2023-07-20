@@ -171,7 +171,7 @@ body
                         {
                             color: darken($secondary-color, 4);
                             margin-right: 10px;
-                            font-size: 2px;
+                            font-size: 10px;
                         }
 
                         span
@@ -261,7 +261,7 @@ body
                 {
                     margin-bottom: 5px;
 
-                    font-size: smaller;
+                    font-size: 12px;
                 }
 
                 p
@@ -279,7 +279,7 @@ body
                     font-size: 10px;
                     opacity: 0.6;
                     color: $primary-color;
-
+                    width: max-content;
                     i
                     {
                         margin-left: 2px;
@@ -366,19 +366,19 @@ body
                     margin-bottom: 4%;
                     border: 1px solid $primary-color;
                     outline: none;
-                    font-size: 5px;
+                    font-size: 10px;
 
 
                 }
 
                 ::placeholder
                 {
-                    font-size: 5px;
+                    font-size: 10px;
                 }
 
                 textarea
                 {
-                    font-size: smaller;
+                    font-size: 12px;
                     width: 100%;
                     padding: 2%;
                     margin-bottom: 2%;
