@@ -560,15 +560,14 @@ body
                     {
                         
                         opacity: 0;
-                        animation: fadeUp 0.5s ease-in forwards;
+                        animation: fadeUp 0.8s ease-in forwards;
                         display: flex;
                         flex-direction: column;
                         align-items: flex-start;
                         
                         position: absolute;
-                        top: 92%;
+                        top: 90%;
                         left: 0;
-                        background-color: rgba(darken($primary-color, 20), 0.8) ;
                         width: 20%;
                         margin-left: 35%;
                         height: 50vh;
@@ -576,7 +575,10 @@ body
                         border-radius: 5px;
                         backdrop-filter: blur(3px);
                         z-index: 999;
+                        background-color: rgba($primary-color, 0.8);
+                       
                         display: none;
+
 
                         li
                         {

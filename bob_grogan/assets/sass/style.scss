@@ -18,7 +18,7 @@ body
         {
             height: 100%;
             width: 100%;
-            background-color: rgba(darken($primary-color, 10), 0.6);
+            background-color: rgba(lighten($primary-color, 10), 0.6);
             backdrop-filter: blur(2px);
             @extend .flex-column, .x-start;
             padding-left: 5%;

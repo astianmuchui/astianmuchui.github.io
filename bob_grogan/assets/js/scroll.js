@@ -32,7 +32,7 @@ function handleScroll()
         {
                 header.style.backgroundColor = 'transparent';
                 header.classList.remove("shadowed");
-                nav.style.backgroundColor = 'rgba(9,65,103,0.8)'; /* Dont change this: */
+                nav.style.backgroundColor = 'rgba(#4444c7, 0.2)'; /* Dont change this: */
 
         }
 }
