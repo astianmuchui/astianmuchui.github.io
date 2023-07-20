@@ -1,3 +1,10 @@
+/**
+ * Written by sebastian muchui
+ * https://github.com/astianmuchui
+ * google - sebastian muchui
+ * astianmuchui@gmail.com
+*/
+
 // Use id's incase there is need to distinguish from md screen header
 
 const header = document.querySelector('#header'); /* Desktop header element */
@@ -18,7 +25,7 @@ function handleScroll()
                 header.style.backgroundColor = '#181842';
                 nav.style.backgroundColor = '#181842'; /* Change the dropdown list background as well */
                 header.classList.add("shadowed");
-                menu.style.zIndex = "999";
+                menu.style.zIndex = "998";
         }
         
         else
