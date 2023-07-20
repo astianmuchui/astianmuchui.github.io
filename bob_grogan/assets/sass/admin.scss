@@ -1,0 +1,36 @@
+@import 'root';
+
+body
+{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        background-color: $secondary-color;
+
+        .home
+        {
+                width: 100%;
+                height: 100vh;
+                display: inline-flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .sidebar
+                {
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+
+                        width: 22%;
+                        background-color: $navy;
+                }
+
+                .main-section 
+                {
+                        width: 78%;
+                        height: 100%;
+                        position: relative;
+                        left: 22%;
+                }
+        }
+}
