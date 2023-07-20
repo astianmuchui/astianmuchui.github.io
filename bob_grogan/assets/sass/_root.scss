@@ -14,7 +14,7 @@ $primary-color: #181842;
 $navy: #010818;
 $secondary-color: #daa520;
 $white: #fff;
-$bg: #f4f7fa;
+$bg: #fcfeffd6;
 $black: #111111;
 $red: rgb(218, 64, 64);
 $green: rgb(5, 194, 106);
@@ -758,7 +758,7 @@ body
     {
         height: 70vh;
         width: 100%;
-        background-color: lighten($primary-color, 2%);
+        background-color: lighten($primary-color, 3%);
         box-sizing: border-box;
         padding: 3% 2%;
         

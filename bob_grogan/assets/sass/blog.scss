@@ -37,6 +37,7 @@ body
                                 font-size: 20px;
                                 margin-bottom: 10px;
                                 color: $primary-color;
+                                width: max-content;
                         }
                         
                         .blog-post
@@ -63,10 +64,13 @@ body
                                 font-size: 5px;
                                 color: $primary-color;
                                 margin-top: 10px;
+                                width: max-content;
 
                                 i
                                 {
                                         font-size: 5px;
+                                        margin-left: 5px;
+                                        margin-top: 4px;
                                 }
 
                                 &:hover
@@ -175,8 +179,20 @@ body
 
                                         a
                                         {
-                                                width: 50%;
+                                                width: 90%;
                                                 display: inline-flex;
+                                        }
+
+                                        a:last-of-type
+                                        {
+                                                font-size: 12px;
+                                        }
+
+                                        p
+                                        {
+                                                font-size: 10px;
+                                                word-spacing: 5px;
+                                                letter-spacing: 0.2px;
                                         }
                                 }
                         }
@@ -202,6 +218,7 @@ body
                                 p
                                 {
                                         font-size: 10px;
+                                        width: 100%;
                                 }
                         }
                 }
