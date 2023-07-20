@@ -250,6 +250,7 @@ body
                 {
                     margin-bottom: 10px;
                     max-height: 30%;
+                    
                     a
                     {
                         font-size: initial;
@@ -276,10 +277,11 @@ body
                 a
                 {
                     margin-top: 10px;
-                    font-size: 10px;
+                    font-size: 12px;
                     opacity: 0.6;
                     color: $primary-color;
                     width: max-content;
+
                     i
                     {
                         margin-left: 2px;
