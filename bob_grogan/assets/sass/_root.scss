@@ -14,7 +14,7 @@ $primary-color: #181842;
 $navy: #010818;
 $secondary-color: #daa520;
 $white: #fff;
-$bg: #fdfdfd;
+$bg: #f4f7fa;
 $black: #111111;
 $red: rgb(218, 64, 64);
 $green: rgb(5, 194, 106);
@@ -868,7 +868,7 @@ body
                 }
             }
         }
-        
+
         header
         {
             height: 65px;
@@ -891,8 +891,8 @@ body
                 {
                     display: flex;
                     position: relative;
-                    left: 85%;
-                    top: 14%;
+                    left: 80%;
+                    top: 17%;
                 }
 
                 ul
