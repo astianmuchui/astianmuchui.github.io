@@ -18,7 +18,7 @@ body
         {
             height: 100%;
             width: 100%;
-            background-color: rgba(lighten($primary-color, 10), 0.6);
+            background-color: rgba(lighten($primary-color, 10), 0.7);
             backdrop-filter: blur(2px);
             @extend .flex-column, .x-start;
             padding-left: 5%;
@@ -547,6 +547,7 @@ body
             .grid-container
             {
                 height: max-content;
+                margin-bottom: 20px;
 
                 .post
                 {
