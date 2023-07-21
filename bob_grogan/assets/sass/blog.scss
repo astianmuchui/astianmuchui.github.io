@@ -174,7 +174,6 @@ body
                                                 margin-bottom: 15px;
                                                 margin-top: 5px;
                                                 height: max-content;
-                                                
                                         }
 
                                         a
@@ -186,6 +185,13 @@ body
                                         a:last-of-type
                                         {
                                                 font-size: 12px;
+
+                                                i
+                                                {
+                                                        font-size: 12px;
+                                                        margin-left: 5px;
+                                                        margin-top: 2px;
+                                                }
                                         }
 
                                         p
