@@ -32,15 +32,22 @@ body
 
                 .links-grid
                 {
+                    height: max-content;
+                    padding-bottom: 10px;
                     a
                     {
                         width: 30px;
-                        
+                        height: max-content;
+                        height: max-content !important;
                         box-sizing: content-box;
+                        padding: 5px;
                         i
                         {
                             background-color: transparent;
                             font-size: 25px;
+                            height: max-content;
+                            padding-bottom: 10px;
+
                         }
                     }
                 }
