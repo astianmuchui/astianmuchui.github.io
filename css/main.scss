@@ -84,6 +84,7 @@ body {
             @media screen and (max-width: 768px) {
                 display: flex;
             }
+
             div {
                 margin-top: 1px;
                 height: 2px;
@@ -396,6 +397,7 @@ body {
 
     footer {
         margin-bottom: 80px;
+
         h2 {
             color: $secondary-color;
             font-weight: 500;
@@ -408,6 +410,7 @@ body {
 @media screen and (max-width: 768px) {
     body {
         overflow-x: hidden !important;
+
         header {
             .title {
                 width: 60%;
@@ -426,6 +429,8 @@ body {
         main {
             height: 80vh;
             display: block;
+            overflow-x: hidden !important;
+
 
             div {
                 width: 100%;
@@ -450,6 +455,8 @@ body {
 
         section {
             display: block;
+            overflow-x: hidden !important;
+
 
             &:first-of-type {
                 .grid-2 {
@@ -468,13 +475,16 @@ body {
                             }
                         }
                     }
+
                     .text-container {
                         h1 {
                             margin-bottom: 4%;
                         }
+
                         p {
                             margin-bottom: 8%;
                         }
+
                         a {
                             margin-top: 2%;
                         }
@@ -504,9 +514,11 @@ body {
                             margin-bottom: 2%;
                             margin-top: 4%;
                         }
+
                         p {
                             margin-bottom: 4%;
                         }
+
                         a {
                             margin-top: 2%;
                         }
