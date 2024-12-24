@@ -1,335 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0000">
-    <meta name="description" content="Sebastian Muchui, Software Engineer, C&I Engineer">
-    <meta name="keywords" content="Sebastian Muchui , astianmuchui">
-    <meta name="author" content="Sebastian Muchui">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif !important;
-            overflow-x: hidden;
-        }
-    </style>
-    <meta property="og:image" content="https://astianmuchui.github.io/img/avatar.jpeg" />
-    <meta property="og:title" content="Sebastian Muchui" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flowbite@1.0.0/dist/flowbite.min.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#0000">
+        <meta name="description" content="Sebastian Muchui, Software Engineer, C&I Engineer">
+        <meta name="keywords" content="Sebastian Muchui , astianmuchui">
+        <meta name="author" content="Sebastian Muchui">
+        <meta property="og:image" content="https://astianmuchui.github.io/img/avatar.jpeg" />
 
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@1.0.0/dist/flowbite.min.js"></script>
-    <link rel="stylesheet" href="./css/aos.css">
-    <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/aos.css">
+        <script src="./js/aos.js"></script>
+        <script src="./js/font_awesome_main.js"></script>
 
-    <script src="./js/font_awesome_main.js"></script>
-    <script src="./js/aos.js"></script>
-    <script src="./js/main.js"></script>
+        <title>Sebastian Muchui - Portfolio</title>
+    </head>
 
-    <title>Sebastian Muchui | Software Engineer, C&I Engineer </title>
-</head>
-
-<body class="bg-gray-900">
-
-    <nav class="bg-gray-900 border-gray-900   sticky z-30 top-0 ">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="https://astianmuchui.tech" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <span class="self-center md:text-xl sm:text-sm text-gray-50 nt-semibold whitespace-nowrap ">Sebastian
-                    <span class="text-blue-500"> Muchui </span> </span>
-            </a>
-            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-
-                <button data-collapse-toggle="navbar-cta" type="button"
-                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-700 "
-                    aria-controls="navbar-cta" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M1 1h15M1 7h15M1 13h15" />
-                    </svg>
-                </button>
+    <body>
+        <header>
+            <div class="title">
+                <p>Sebastian Muchui</p>
             </div>
-            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 my-auto bg-gray-900 "
-                id="navbar-cta">
-                <ul
-                    class="flex flex-col font-medium p-4 md:p-0 mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-gray-900 ">
-                    <li>
-                        <a href="./"
-                            class="block py-2 px-3 text-xs md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700"
-                            aria-current="page">Home</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/astianmuchui"
-                            class="block py-2 px-3 text-xs md:p-0 text-white rounded hover:bg-gray-900 md:hover:text-blue-700 ">Github</a>
-                    </li>
-                    <li>
-                        <a href="https://linkedin.com/in/astianmuchui"
-                            class="block py-2 px-3 text-xs md:p-0 text-white rounded hover:bg-gray-900 md:hover:text-blue-700 ">Linkedin</a>
-                    </li>
-                    <li>
-                        <a href="mailto:astianmuchui"
-                            class="block py-2 px-3 text-xs md:p-0 text-white rounded hover:bg-gray-900 md:hover:text-blue-700 ">Contact</a>
-                    </li>
+
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#reach-out">Reach out</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="https://medium.com/@astianmuchui">Blog</a></li>
+                    <li><a href="./downloads/sebastian-muchui-resume.pdf" download class="btn-primary"> <i
+                                class="fas fa-download"></i> Download CV</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </header>
+        <div class="menu" id="menu">
+            <span id="close">
+                <!-- Cancel button -->
+                &times;
+            </span>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#reach-out">Reach out</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="https://medium.com/@astianmuchui">Blog</a></li>
+                    <li><a href="./downloads/sebastian-muchui-resume.pdf" download class="btn-primary"> <i
+                                class="fas fa-download"></i> Download CV</a></li>
+                </ul>
+
+        </div>
+
+        <main>
+            <div>
+                <h1 data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100"> I am Sebastian Muchui</h1>
+                <p data-aos="fade-right" data-aos-duration="800" data-aos-delay="500">Software Engineer, Control and
+                    Instrumentation Student</p>
+                <div class="grid-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
+                    <a href="https://linkedin.com/in/astianmuchui"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/astianmuchui"><i class="fab fa-github"></i></a>
+                    <a href="mailto:astianmuchui@gmail.com"><i class="far fa-envelope"></i></a>
+                    <a href="https://x.com/astianmuchui"><i class="fab fa-twitter"></i></a>
+                </div>
+                <a href="https://calendly.com/astianmuchui" class="btn-primary" data-aos="fade-up"
+                    data-aos-duration="1000" data-aos-delay="1400"> <i class="fas fa-calendar"></i> Schedule a call</a>
+
+            </div>
+        </main>
+
+        <section class="">
+            <h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">Who am I ?</h1>
+
+            <div class="grid-2">
+                <div class="container">
+                    <div class="Grid-masonry" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="Grid-masonry-item">
+                            <img src="./img/516A1599.jpg" alt="">
+                        </div>
+                        <div class="Grid-masonry-item">
+                            <img src="./img/IMG-20240912-WA0007.jpg" alt="">
+                        </div>
+
+                        <div class="Grid-masonry-item">
+                            <img src="./img/DSCN0198.JPG" alt="">
+                        </div>
+
+                        <div class="Grid-masonry-item">
+                            <img src="./img/session.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="text-container" data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="100">
+                    <h1>A Problem solver</h1>
+                    <p>
+                        I am a highly capable self-taught engineer with a vast array of experiences and skills that
+                        enable me approach different types of problems
+                        and work in multiple settings. Currently, I am an undergraduate Control and Instrumentation
+                        student and a certified software engineer.
+                        <br> <br>
+                        As a software engineer, I focus on the solution and it's sustainability. My programming
+                        background is vast, from web applications, to IoT and robotics. Other than that,
+                        I have substantial experience working with and setting up linux systems.
+                        <br><br>
+                        As a student, my aim is to learn as much as possible and apply it in the real world for research
+                        and come up with new innovative ways to solve problems.
+                    </p>
+                    <a href="https://calendly.com/astianmuchui" class="btn-primary"> <i class="fas fa-calendar"></i>
+                        Schedule a call</a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h1 data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">My Skills</h1>
+
+            <div class="grid-2" data-aos="flip-up" data-aos-delay="100" data-aos-duration="1000">
+
+                <div class="web-container">
+                    <h1>Web Development</h1>
+                    <p>
+                        I have experience in building responsive and dynamic web applications using modern technologies.
+                        I am proficient in both front-end and back-end development, ensuring seamless integration and
+                        functionality.
+                        <br> <br>
+                        My Stack Includes
+                    </p>
+                    <ul class="fa-ul">
+                        <li><span class=""><i class="fab fa-html5"></i></span>HTML5</li>
+                        <li><span class=""><i class="fab fa-css3"></i></span>CSS / SCSS </li>
+                        <li><span class=""><i class="fab fa-js"></i></span>JavaScript / Typescript</li>
+                        <li><span class=""><i class="fab fa-react"></i></span>React / Next.js</li>
+                        <li><span class=""><i class="fab fa-node-js"></i></span>Node.js</li>
+                        <li><span class=""><i class="fas fa-code"></i></span>Go</li>
+                        <li><span class=""><i class="fab fa-laravel"></i></span>PHP / Laravel</li>
+                        <li><span class=""><i class="fab fa-python"></i></span>Python / Django</li>
+                        <li><span class=""><i class="fas fa-database"></i></span>SQL & NoSQL Databases</li>
+                        <li><span class=""><i class="fas fa-memory"></i></span>Redis</li>
+                        <li><span class=""><i class="fas fa-cloud"></i></span>Devops</li>
+                    </ul>
+                </div>
+                <div class="grid-1">
+                    <div>
+                        <h1>Hardware Development</h1>
+                        <p>
+                            I also have experience with hardware development, both on the firmware and circuitry to give
+                            the best possible solution
+                            <br> <br>
+                            My Skills Include
+                        </p>
+                        <ul class="fa-ul">
+                            <li><span class=""><i class="fas fa-microchip"></i></span>Arduino C/C++</li>
+                            <li><span class=""><i class="fas fa-bolt"></i></span>Circuitry skills</li>
+                            <li><span class=""><i class="fas fa-code"></i></span>RTOS</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h1>Linux and Commandline</h1>
+                        <p>
+                            Additionally I have strong linux commandline skills that aid in my day to day endeavors
+                            <br> <br>
+                            They Include
+                        </p>
+                        <ul class="fa-ul">
+                            <li><span class=""><i class="fab fa-ubuntu"></i></span>Linux</li>
+                            <li><span class=""><i class="fas fa-code-branch"></i></span>Git</li>
+                            <li><span class=""><i class="fas fa-server"></i></span>Web Server configuration</li>
+                            <li><span class=""><i class="fab fa-docker"></i></span>Docker</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <a href="https://github.com/astianmuchui" class="btn-primary" data-aos="fade" data-aos-delay="100"
+                data-aos-duration="1000"> <i class="fab fa-github"></i>
+                Visit my github</a>
+        </section>
+
+        <section id="projects">
+            <h1 data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">My Projects</h1>
+
+            <div class="grid-2">
+                <img src="./img/maridadi.png" alt="" data-aos="fade-right" data-aos-delay="100"
+                    data-aos-duration="1000">
+
+                <div class="text-container" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
+                    <h1>Maridadi Online</h1>
+                    <p>
+                        Maridadi online is an online store specializing mostly in aquarium products and ornamental fish.
+                        The websiite has multiple features such as multi-vendor support, payment integration and much
+                        more.
+                    </p>
+                    <a href="https://maridadionline.com" class="btn-primary"> <i class="fas fa-eye"></i>
+                        View Project</a>
+                </div>
+            </div>
+
+
+            <div class="grid-2">
+                <img src="./img/robot2022.jpg" alt="" data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000"
+                    class="virtual">
+
+                <div class="text-container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <h1>RO-04 Robot</h1>
+                    <p>
+                        The RO-04 robot was part of the robotics dojo competittion in 2022, the objective was to build a
+                        robot with line following, obstacle avoidance and maze solving capabilities.
+                    </p>
+                    <a href="https://github.com/Teamro04/firmware1.0/" class="btn-primary"> <i
+                            class="fab fa-github"></i>
+                        View Project</a>
+                </div>
+                <img src="./img/robot2022.jpg" alt="" data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000"
+                    class="real">
+
+            </div>
+
+            <div class="grid-2">
+                <img src="./img/halcyon.png" alt="" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+
+                <div class="text-container" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+                    <h1>Halcyon CSS</h1>
+                    <p>
+                        A minimal CSS library to help build user interfaces fast. The library is available via CDN and
+                        will be documented soon.
+                    </p>
+                    <a href="https://github.com/astianmuchui/Halcyon.css" class="btn-primary"> <i
+                            class="fab fa-github"></i>
+                        View Project</a>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <img src="./img/carbon.png" alt="" data-aos="fade-up-left" data-aos-delay="100" data-aos-duration="1000"
+                    class="virtual">
+
+                <div class="text-container" data-aos="fade-up-right" data-aos-duration="1000" data-aos-delay="100">
+                    <h1>PixelSequel Query builder</h1>
+                    <p>
+                        A lightweight and easy to use query builder for PHP projects available as a composer package
+                    </p>
+                    <a href="https://astianmuchui.github.io/PixelSequel/home" class="btn-primary"> <i
+                            class="fas fa-eye"></i>
+                        View Project</a>
+                </div>
+                <img src="./img/carbon.png" alt="" data-aos="fade-up-left" data-aos-delay="100" data-aos-duration="1000"
+                    class="real">
+
+            </div>
+
+            <div class="grid-2">
+                <img src="./img/audconv.png" alt="" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+
+                <div class="text-container" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+                    <h1>PDF to Audiobook converter</h1>
+                    <p>
+                        A commandline tool that helps you convert pdfs to audio files that one can listen to. The tool
+                        has male and female voice options too.
+                    </p>
+                    <a href="https://github.com/astianmuchui/pdf-audiobook-converter" class="btn-primary"> <i
+                            class="fab fa-github"></i>
+                        View Project</a>
+                </div>
+            </div>
+
+
+        </section>
+
+
+        <section id="reach-out">
+            <h1 data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">How to Reach Me</h1>
+
+            <div data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+                <ul class="fa-ul">
+                    <li><span class=""><i class="far fa-envelope"></i></span>astianmuchui@gmail.com</li>
+                    <li><span class=""><i class="fas fa-phone-alt"></i></span>+254797061691 / +254716590423</li>
                 </ul>
             </div>
-        </div>
-    </nav>
+        </section>
 
-    <main
-        class="h-96 p-3 my-5 w-full flex flex-col items-center justify-center justify-items-center content-center p-2">
-        <h1
-            class="text-2xl md:text-6xl text-center mb-4  font-medium bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700 text-transparent ">
-            I'm Sebastian Muchui</h1>
-        <p class="text-gray-50 text-lg my-4 text-center">Software Engineer, Control and Instrumentation Engineering
-            student </p>
-        <div class="grid grid-cols-4 place-items-center my-5 ">
-            <a href="https://github.com/astianmuchui" target="_blank"
-                class="w-8 h-8  bg-gradient-to-r from-blue-500 to-blue-700 mx-3 flex flex-col items-center contnt-center justify-items-center justify-center rounded-full box-content p-1 "><i
-                    class="text-white  fa fa-github"></i></a>
-            <a href="mailto:astianmuchui" target="_blank"
-                class="w-8 h-8  bg-gradient-to-r from-blue-500 to-blue-700 mx-3 flex flex-col items-center contnt-center justify-items-center justify-center rounded-full box-content p-1 "><i
-                    class="text-white  far fa-envelope"></i></a>
-            <a href="https://x.com/astianmuchui" target="_blank"
-                class="w-8 h-8  bg-gradient-to-r from-blue-500 to-blue-700 mx-3 flex flex-col items-center contnt-center justify-items-center justify-center rounded-full box-content p-1 "><i
-                    class="text-white  fab  fa-twitter"></i></a>
-            <a href="https://linkedin.com/in/astianmuchui" target="_blank"
-                class="w-8 h-8  bg-gradient-to-r from-blue-500 to-blue-700 mx-3 flex flex-col items-center contnt-center justify-items-center justify-center rounded-full box-content p-1 "><i
-                    class="text-white  fa  fa-linkedin"></i></a>
-        </div>
-        <a href="https://calendly.com/astianmuchui/"
-            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-l focus:ring-1 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 font-medium rounded-lg text-sm px-8 py-4  text-center my-2 mb-2 ">
-            <i class="fas fa-calendar mr-2 "></i> Schedule a call</a>
-    </main>
+        <footer class="flex-column">
+            <h2>Made by Sebastian Muchui &copy; 2024 </h2>
+        </footer>
+        <script src="./js/main.js"></script>
 
-    <section class="h-96 mb-8 mt-16 w-full grid grid-cols-1 sm:grid-cols-2 place-items-center px-8"
-    data-aos="fade-up">
-    <div class="w-full h-full px-8 flex flex-col justify-center">
-        <h1
-            class="text-2xl md:text-4xl mb-4 font-semibold bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700 text-transparent">
-            Full Stack Software Engineer
-        </h1>
-        <p class="text-gray-50 text-sm tracking-wider leading-loose mt-2">
-            I am a full-stack software engineer with experience in web development. I have worked on projects that
-            have involved the design and implementation of web applications, RESTful APIs, and databases. I am
-            proficient in JavaScript, Python, PHP. I am also familiar with front-end frameworks such as React and
-            back-end frameworks such as Django, Laravel, and Node.js. I am always looking for opportunities to learn
-            and grow in the field of software engineering.
-        </p>
-        <a href="https://drive.google.com/file/u/0/d/1zd_Cl24dAlq5vei67LCFgf2_TqqbP5DZ/view?usp=sharing&pli=1"
-            class="text-white bg-gradient-to-r w-max from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-l focus:ring-1 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 font-medium rounded-lg text-sm px-8 py-4 text-center mt-4">
-            <i class="fa fa-file mr-2"></i> Download my resume
-        </a>
-    </div>
-    <img src="./img/laptop.jpg" alt="" class="rounded-lg w-11/12 mt-4 sm:mt-0 sm:opacity-0 " data-aos="fade-left">
-</section>
-
-<section class="h-96 mb-8 mt-16 w-full grid grid-cols-1 sm:grid-cols-2 place-items-center px-8"
-    data-aos="fade-up">
-    <img src="./img/516A1599.jpg" alt="" class="rounded-lg w-11/12 mb-4 sm:mb-0" data-aos="fade-right">
-    <div class="w-full h-full px-8 flex flex-col justify-center">
-        <h1
-            class="text-2xl md:text-4xl mb-4 font-semibold bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700 text-transparent">
-            IoT and Robotics Engineer
-        </h1>
-        <p class="text-gray-50 text-sm tracking-wider leading-loose mt-2">
-            Additionally, I am a hardware and IoT engineering practitioner with two years of experience. In this time
-            I have worked on projects that have involved the design and implementation of IoT systems, embedded
-            systems, and hardware prototyping. I am currently a student at the Jomo Kenyatta University of
-            Agriculture and Technology pursuing a degree in Control and Instrumentation Engineering. I am passionate
-            about technology and its application in solving real-world problems. I am always looking for
-            opportunities to learn and grow in the field of technology.
-        </p>
-        <a href="https://drive.google.com/file/u/0/d/1zd_Cl24dAlq5vei67LCFgf2_TqqbP5DZ/view?usp=sharing&pli=1"
-            class="text-white bg-gradient-to-r w-max from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-l focus:ring-1 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 font-medium rounded-lg text-sm px-8 py-4 text-center mt-4">
-            <i class="fa fa-file mr-2"></i> Download my resume
-        </a>
-    </div>
-</section>
-
-    
-    <section class="w-full h-96 flex flex-col items-center content-center justify-center">
-        <h1
-            class="text-2xl md:text-4xl mb-4  font-semibold bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700 text-transparent tracking-wider  ">
-            Technical Skills </h1>
-        <div class="grid grid-cols-4 w-11/12  mx-auto px-8 gap-4 place-items-center mt-12">
-
-            <div class=" py-4 px-8 rounded-lg shadow bg-gray-800 ">
-                <i
-                    class="fas fa-microchip  text-4xl mb-3 bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700 text-transparent "></i>
-                <h5 class="mb-2 text-xl font-semibold tracking-tight text-white tracking-wider">IoT and Robotics</h5>
-            </div>
-
-            <div class=" py-4 px-8 rounded-lg shadow bg-gray-800 ">
-                <i
-                    class="fas fa-code-branch   text-4xl mb-3 bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700 text-transparent "></i>
-                <h5 class="mb-2 text-xl font-semibold tracking-tight text-white tracking-wider">Version Control</h5>
-            </div>
-
-            <div class=" py-4 px-8 rounded-lg shadow bg-gray-800 ">
-                <i
-                    class="fab fa-ubuntu text-4xl mb-3 bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700 text-transparent "></i>
-                <h5 class="mb-2 text-xl font-semibold tracking-tight text-white tracking-wider">Linux Systems</h5>
-            </div>
-
-            <div class=" py-4 px-8 rounded-lg shadow bg-gray-800 ">
-                <i
-                    class="fas fa-code  text-4xl mb-3 bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700 text-transparent "></i>
-                <h5 class="mb-2 text-xl font-semibold tracking-tight text-white tracking-wider">Web Development</h5>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="w-full h-screen p-3 flex flex-col items-center content-center">
-        <h1
-            class="text-2xl md:text-4xl mb-4 font-semibold bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700 text-transparent tracking-wider">
-            Some of my projects</h1>
-
-        <div class="grid grid-cols-4 gap-6 w-10/12 mx-auto mt-12">
-            <div class="max-w-sm bg-gray-800 rounded-lg h-8/12">
-                <a href="#" class="">
-                    <div class="h-52">
-                        <img class="rounded-t-lg h-full w-full object-fit " src="./img/halcyon.png"
-                            alt="Halcyon.css" />
-                    </div>
-                </a>
-                <div class="p-5">
-                    <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Halcyon.css</h5>
-                    </a>
-                    <p class="mb-3 font-normal text-gray-400 text-sm">
-                        A minimal css framework with normalized components and a tonne of design classes for resizes,
-                        colors, backgrounds, intelligent animation timing etc.
-                    </p>
-                    <a href="https://github.com/astianmuchui/Halcyon.css/"
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800">
-                        View project
-                        <svg class="rtl:rotate-180 w-3.5 h-3.5 mx-2" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class="max-w-sm bg-gray-800 rounded-lg h-8/12">
-                <a href="#" class="">
-                    <div class="h-52">
-                        <img class="rounded-t-lg h-full w-full object-fit " src="./img/carbon.png"
-                            alt="PixelSequel ORM" />
-                    </div>
-                </a>
-                <div class="p-5">
-                    <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">PixelSequel ORM</h5>
-                    </a>
-                    <p class="mb-3 font-normal text-gray-400 text-sm">
-                        A minimalist PHP Object Relational Mapping library for MySQL databases.
-                        It provides a simple and intuitive way to interact with your database using PHP objects.
-                    </p>
-                    <a href="https://astianmuchui.tech/PixelSequel/home"
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800">
-                        View project
-                        <svg class="rtl:rotate-180 w-3.5 h-3.5 mx-2" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class="max-w-sm bg-gray-800 rounded-lg h-8/12">
-                <a href="#" class="">
-                    <div class="h-52">
-                        <img class="rounded-t-lg h-full w-full object-fit " src="./img/maridadi.png"
-                            alt="PixelSequel ORM" />
-                    </div>
-                </a>
-                <div class="p-5">
-                    <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Maridadi Online</h5>
-                    </a>
-                    <p class="mb-3 font-normal text-gray-400 text-sm">
-                        Maridadi online is an ecommerce website and seller platform dealing in aquarium products,
-                        ornamental fish etc. The website is built from scratch
-                    </p>
-                    <a href="https://maridadionline.com/"
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800">
-                        View project
-                        <svg class="rtl:rotate-180 w-3.5 h-3.5 mx-2" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-
-            <div class="max-w-sm bg-gray-800 rounded-lg h-8/12">
-                <a href="#" class="">
-                    <div class="h-52">
-                        <img class="rounded-t-lg h-full w-full object-fit " src="./img/mini_robot.jpg"
-                            alt="PixelSequel ORM" />
-                    </div>
-                </a>
-                <div class="p-5">
-                    <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Autonomous Robot</h5>
-                    </a>
-                    <p class="mb-3 font-normal text-gray-400 text-sm">
-                        An autonomous robot that is built using the Arduino framework and is capable of following a line
-                        and avoiding obstacles using IR and ultrasonic sensors.
-                    </p>
-                    <a href="https://maridadionline.com/"
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800">
-                        View project
-                        <svg class="rtl:rotate-180 w-3.5 h-3.5 mx-2" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-
-        </div>
-    </section>
-
-    <section class="w-full h-96">
-        <h1
-        class="text-2xl md:text-4xl mb-4 mx-auto text-center font-semibold bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700 text-transparent tracking-wider">
-        Gallery
-    </h1>
-
-        <div id="carousel">
-            <figure id="spinner">
-                <img src="./img/certificate.png" alt="" class="w-40 h-52 object-cover rounded-lg mx-2">
-                <img src="./img/5Capture.PNG" alt="" class="w-40 h-52 object-cover rounded-lg mx-2">
-                <img src="./img/DSCN0198.JPG" alt="" class="w-40 h-52 object-cover rounded-lg mx-2">
-                <img src="./img/IMG_20221016_133446_195.jpg" alt="" class="w-40 h-52 object-cover rounded-lg mx-2">
-                <img src="./img/solder.jpg" alt="" class="w-40 h-52 object-cover rounded-lg mx-2">
-                <img src="./img/IMG-20230928-WA0063.jpg" alt="" class="w-40 h-52 object-cover rounded-lg mx-2">
-                <img src="./img/IMG_4488.jpg" alt="" class="w-40 h-52 object-cover rounded-lg mx-2">
-                <img src="./img/device.jpg" alt="" class="w-40 h-52 object-cover rounded-lg mx-2">
-
-            </figure>
-        </div>
-        <span style="float:left" class="ss-icon" onclick="galleryspin('-')" class="my-auto"> <i class="fas fa-arrow-circle-left "></i> </span>
-        <span style="float:right" class="ss-icon" onclick="galleryspin('')" class="my-auto" > <i class="fas fa-arrow-circle-right"></i> </span>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
-    <script>
-        AOS.init()
-    </script>
-</body>
+        <script>
+            AOS.init()
+        </script>
+    </body>
 
 </html>

@@ -1,6 +1,19 @@
-var angle = 0;
-function galleryspin(sign) { 
-spinner = document.querySelector("#spinner");
-if (!sign) { angle = angle + 45; } else { angle = angle - 45; }
-spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
-}
+var toggle, menu, close_btn;
+
+toggle = document.getElementById("toggle")
+menu = document.getElementById("menu")
+close_btn = document.getElementById("close")
+
+// Check if the menu was clicked
+toggle.addEventListener("click", function()
+{
+    // Open the menu
+    menu.style.display = "block";
+})
+
+// Check if the close button was clicked
+close_btn.addEventListener("click",function()
+{
+    // Close the menu
+    menu.style.display="none"
+})
