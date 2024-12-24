@@ -1,0 +1,193 @@
+@import 'root';
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: darken($theme-color, 2);
+
+    main {
+        height: 86vh;
+        width: 100vw;
+        box-sizing: border-box;
+        padding-top: 8%;
+        padding-bottom: 2%;
+        background-attachment: fixed;
+
+        .grid-2 {
+            width: 85%;
+            height: 90%;
+
+            .gr {
+                width: 80%;
+                position: relative;
+                top: -15%;
+
+                p {
+                    margin-top: -5px;
+                    opacity: 0.5;
+                    font-size: 15px;
+                    line-height: 20px;
+                }
+
+                a {
+                    background-color: darken($theme-color, 2);
+                    border: 1px solid $primary-color;
+                    transition: all 0.4s ease-in;
+
+                    i {
+                        transition: all 0.5s ease-in;
+                        margin-right: 5px;
+                        color: $primary-color;
+                    }
+
+                    &:hover {
+                        @extend .btn-primary;
+                    }
+                }
+
+            }
+
+            img {
+                width: 100%;
+                animation: fade 1s forwards ease-in;
+                transform: rotate(30deg)
+            }
+        }
+    }
+
+    section {
+        @extend .y-start;
+        height: 105vh;
+        width: 100vw;
+        box-sizing: border-box;
+
+        .container {
+            width: 85%;
+            height: 90%;
+            @extend .grid-3;
+            box-sizing: border-box;
+            padding-top: 1%;
+
+            div {
+                height: max-content;
+                width: 95%;
+                background-color: darken($theme-color, 2);
+                border-radius: 10px;
+                box-shadow: inset 1px 1px rgba(255, 255, 255, 0.257), inset -1px -1px rgba(255, 255, 255, 0.198), 1px 3px 24px -1px rgba(0, 0, 0, .15);
+                box-sizing: border-box;
+                padding: 6% 5%;
+
+                @extend .y-start;
+                @extend .x-start;
+
+                &:hover {
+                    transition: all 1s ease-out;
+                    transform: translateY(-10px);
+                }
+
+                .price {
+                    i {
+                        opacity: 1;
+                        font-size: 15px;
+                        margin: 0 10px;
+
+                    }
+
+                    .fa-star {
+                        margin: 0 5px;
+                    }
+                }
+
+                h1 {
+                    font-size: 35px;
+                    margin-top: 15px;
+                    margin-bottom: 2px;
+
+                    small {
+                        font-size: 14px;
+                    }
+
+                }
+
+                h5 {
+                    margin-bottom: 0.2px;
+                    opacity: 0.7;
+                    font-size: 11.5px;
+
+                    i {
+                        margin-right: 10px;
+                    }
+                }
+
+                a {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+
+}
+
+
+@media screen and (min-width: 310px) and (max-width: 768px) {
+    body {
+        main {
+            height: max-content;
+            box-sizing: border-box;
+            padding: 25% 2%;
+
+            .wrapper {
+                height: max-content;
+                grid-template-columns: repeat(1, 1fr);
+                width: 95%;
+                text-align: center;
+                align-items: center;
+
+                .gr {
+                    align-items: center;
+                    width: 100%;
+                }
+
+            }
+        }
+
+        section {
+            height: max-content;
+            width: 100vw;
+            align-content: center;
+            justify-content: center;
+
+            h1 {
+                width: 90%;
+                text-align: center;
+                margin-bottom: 3%;
+                font-size: 20px;
+            }
+
+            .container {
+                width: 95%;
+                height: max-content;
+                grid-template-columns: repeat(1, 1fr);
+                padding: 0;
+
+
+                div {
+                    height: max-content;
+                    width: 90%;
+                    margin: 20px auto;
+                    padding: 5% 5%;
+                    box-shadow: inset 1px 1px rgba(255, 255, 255, 0.257), inset -1px -1px rgba(255, 255, 255, 0.198), 1px 3px 24px -1px rgba(0, 0, 0, .15);
+
+                    h1 {
+                        font-size: 25px;
+                    }
+
+                    h5 {
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
