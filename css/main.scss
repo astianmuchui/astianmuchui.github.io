@@ -375,10 +375,13 @@ body {
                         padding: 0;
                         color: #fff;
                         font-size: 13px;
+                        text-transform: lowercase;
+
 
                         span {
                             padding: 0;
                             color: #fff;
+                            text-transform: lowercase;
 
                             i {
                                 color: $secondary-color;
