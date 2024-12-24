@@ -104,6 +104,7 @@ body .menu
     width: 80vw;
     height: 100vh;
     position: fixed;
+    padding: 1%;
     background: rgba($color: #00030a, $alpha: 0.9);
     backdrop-filter: blur(10px);
     z-index: 999;
@@ -160,7 +161,6 @@ body .menu ul
 body .menu ul li
 {
     margin-bottom: 25px;
-    border-bottom: 1px solid rgb(20, 37, 72);
     padding: 10px 0 0 0;
     align-items: flex-start;
 
@@ -176,6 +176,6 @@ body .menu ul li
 {
     body .menu
     {
-        width: 55%;
+        width: 65%;
     }
 }

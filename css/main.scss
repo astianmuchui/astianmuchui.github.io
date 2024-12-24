@@ -67,8 +67,8 @@ body {
         .hamburger {
             position: absolute;
             right: 20px;
-            top: 12px;
-            height: 32px;
+            top: 14px;
+            height: 34px;
             width: 34px;
             background: linear-gradient(-120deg, lighten($primary-color, 10), lighten($primary-color, 30));
             border-radius: 5px;
@@ -77,6 +77,7 @@ body {
             justify-content: center;
             align-items: center;
             padding: 3px;
+            padding-top: 7px;
             cursor: pointer;
             display: none;
 
@@ -84,8 +85,9 @@ body {
                 display: flex;
             }
             div {
+                margin-top: 1px;
                 height: 2px;
-                width: 90%;
+                width: 85%;
                 background-color: $secondary-color;
                 margin-bottom: 5px;
             }
@@ -461,6 +463,17 @@ body {
                             }
                         }
                     }
+                    .text-container {
+                        h1 {
+                            margin-bottom: 4%;
+                        }
+                        p {
+                            margin-bottom: 8%;
+                        }
+                        a {
+                            margin-top: 2%;
+                        }
+                    }
                 }
             }
 
@@ -480,6 +493,19 @@ body {
 
                 .grid-2 {
                     display: block;
+
+                    .text-container {
+                        h1 {
+                            margin-bottom: 2%;
+                            margin-top: 4%;
+                        }
+                        p {
+                            margin-bottom: 4%;
+                        }
+                        a {
+                            margin-top: 2%;
+                        }
+                    }
 
                     .real {
                         display: none;
