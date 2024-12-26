@@ -459,8 +459,12 @@ body {
             height: max-content;
 
             &:first-of-type {
+                height: max-content;
+
                 .grid-2 {
                     display: block;
+                    height: max-content;
+
 
                     .Grid-masonry {
                         display: grid;
