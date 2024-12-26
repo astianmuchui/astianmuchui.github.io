@@ -427,8 +427,9 @@ body {
         }
 
         main {
-            height: 80vh;
+            height: 90vh;
             display: block;
+            overflow-x: hidden !important;
 
 
             div {
@@ -454,6 +455,8 @@ body {
 
         section {
             display: block;
+            overflow-x: hidden !important;
+            height: max-content;
 
             &:first-of-type {
                 .grid-2 {
