@@ -1,295 +1,936 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1e3a5f">
+    <meta name="description" content="Sebastian Muchui - Software Engineer, IoT Engineer, Control & Instrumentation">
+    <meta name="keywords" content="Sebastian Muchui, astianmuchui, Software Engineer, IoT Engineer">
+    <meta name="author" content="Sebastian Muchui">
+    <meta property="og:image" content="https://astianmuchui.github.io/img/516A1599.jpg">
+    <title>Sebastian Muchui - Software Engineer & IoT Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/84b6428a50.js" crossorigin="anonymous"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            50: '#eef4ff',
+                            100: '#d9e6ff',
+                            200: '#bcd4ff',
+                            300: '#8eb8ff',
+                            400: '#5990ff',
+                            500: '#3366ff',
+                            600: '#1a44f5',
+                            700: '#1333e1',
+                            800: '#162bb6',
+                            900: '#182a8f',
+                            950: '#0f1a57',
+                        },
+                        slate: {
+                            925: '#0c1222',
+                            950: '#060b18',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', system-ui, sans-serif; }
+        
+        html { scroll-behavior: smooth; }
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="theme-color" content="#002e99">
-        <meta name="description" content="Sebastian Muchui, Software Engineer, C&I Engineer">
-        <meta name="keywords" content="Sebastian Muchui , astianmuchui">
-        <meta name="author" content="Sebastian Muchui">
-        <meta property="og:image" content="https://astianmuchui.github.io/img/516A1599.jpg" />
+        body {
+            background: #060b18;
+            color: #e2e8f0;
+        }
 
-        <link rel="stylesheet" href="./css/main.css">
-        <link rel="stylesheet" href="./css/aos.css">
-        <script src="./js/aos.js"></script>
-        <script src="./js/font_awesome_main.js"></script>
+        /* Noise texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
 
-        <title>Sebastian Muchui - Portfolio</title>
-    </head>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #060b18; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #3366ff, #1333e1); border-radius: 3px; }
 
-    <body>
-        <header>
-            <div class="title">
-                <p>Sebastian Muchui</p>
-            </div>
+        /* Intersection observer animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.92);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-scale.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
 
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="#reach-out">Reach out</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="https://medium.com/@astianmuchui">Blog</a></li>
-                    <li><a href="./downloads/sebastian-muchui-resume.pdf" download class="btn-primary"> <i
-                                class="fas fa-download"></i> Download CV</a></li>
-                </ul>
+        /* Stagger children */
+        .stagger-children .reveal:nth-child(1) { transition-delay: 0ms; }
+        .stagger-children .reveal:nth-child(2) { transition-delay: 100ms; }
+        .stagger-children .reveal:nth-child(3) { transition-delay: 200ms; }
+        .stagger-children .reveal:nth-child(4) { transition-delay: 300ms; }
+        .stagger-children .reveal:nth-child(5) { transition-delay: 400ms; }
+        .stagger-children .reveal:nth-child(6) { transition-delay: 500ms; }
+        .stagger-children .reveal:nth-child(7) { transition-delay: 600ms; }
+        .stagger-children .reveal:nth-child(8) { transition-delay: 700ms; }
+        .stagger-children .reveal:nth-child(9) { transition-delay: 800ms; }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #5990ff 0%, #3366ff 40%, #8eb8ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Glow effect */
+        .glow-blue {
+            box-shadow: 0 0 60px -15px rgba(51, 102, 255, 0.3);
+        }
+
+        /* Mesh gradient background */
+        .mesh-bg {
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(51, 102, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(89, 144, 255, 0.06) 0%, transparent 40%),
+                radial-gradient(ellipse at 50% 80%, rgba(19, 51, 225, 0.05) 0%, transparent 50%);
+        }
+
+        /* Card hover */
+        .card-hover {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px -15px rgba(51, 102, 255, 0.15);
+        }
+
+        /* Skill tag hover */
+        .skill-tag {
+            transition: all 0.3s ease;
+        }
+        .skill-tag:hover {
+            background: rgba(51, 102, 255, 0.15);
+            border-color: rgba(51, 102, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Timeline line */
+        .timeline-line {
+            background: linear-gradient(180deg, #3366ff, transparent);
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Hero particles */
+        .hero-grid {
+            background-image: 
+                linear-gradient(rgba(51, 102, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(51, 102, 255, 0.05) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        /* Link underline animation */
+        .link-underline {
+            position: relative;
+        }
+        .link-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #3366ff;
+            transition: width 0.3s ease;
+        }
+        .link-underline:hover::after {
+            width: 100%;
+        }
+
+        /* Header blur */
+        .header-blur {
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden relative">
+
+    <!-- ===================== HEADER ===================== -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 header-blur bg-slate-950/70 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="text-lg font-bold tracking-tight text-white">
+                SM<span class="text-navy-400">.</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#about" class="text-sm text-slate-400 hover:text-white transition-colors link-underline">About</a>
+                <a href="#experience" class="text-sm text-slate-400 hover:text-white transition-colors link-underline">Experience</a>
+                <a href="#skills" class="text-sm text-slate-400 hover:text-white transition-colors link-underline">Skills</a>
+                <a href="#projects" class="text-sm text-slate-400 hover:text-white transition-colors link-underline">Projects</a>
+                <a href="#blog" class="text-sm text-slate-400 hover:text-white transition-colors link-underline">Blog</a>
+                <a href="#contact" class="text-sm text-slate-400 hover:text-white transition-colors link-underline">Contact</a>
+                <a href="./downloads/sebastian-muchui-resume.pdf" download class="text-sm px-4 py-2 bg-navy-600 hover:bg-navy-500 text-white rounded-lg transition-colors">
+                    <i class="fas fa-download mr-1.5 text-xs"></i> Resume
+                </a>
             </nav>
-            <div class="hamburger" id="toggle">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </header>
-        <div class="menu" id="menu">
-            <span id="close">
-                <!-- Cancel button -->
-                &times;
-            </span>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="#reach-out">Reach out</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="https://medium.com/@astianmuchui">Blog</a></li>
-                    <li><a href="./downloads/sebastian-muchui-resume.pdf" download class="btn-primary"> <i
-                                class="fas fa-download"></i> Download CV</a></li>
-                </ul>
+            <button id="menu-toggle" class="md:hidden text-white p-2" aria-label="Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+    </header>
 
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-0 z-[60] bg-slate-950/95 header-blur flex flex-col items-center justify-center gap-8">
+        <button id="menu-close" class="absolute top-5 right-6 text-white text-3xl">&times;</button>
+        <a href="#about" class="text-xl text-slate-300 hover:text-white transition-colors mobile-link">About</a>
+        <a href="#experience" class="text-xl text-slate-300 hover:text-white transition-colors mobile-link">Experience</a>
+        <a href="#skills" class="text-xl text-slate-300 hover:text-white transition-colors mobile-link">Skills</a>
+        <a href="#projects" class="text-xl text-slate-300 hover:text-white transition-colors mobile-link">Projects</a>
+        <a href="#blog" class="text-xl text-slate-300 hover:text-white transition-colors mobile-link">Blog</a>
+        <a href="#contact" class="text-xl text-slate-300 hover:text-white transition-colors mobile-link">Contact</a>
+        <a href="./downloads/sebastian-muchui-resume.pdf" download class="text-sm px-6 py-3 bg-navy-600 text-white rounded-lg">
+            <i class="fas fa-download mr-2"></i> Download Resume
+        </a>
+    </div>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="relative min-h-screen flex items-center mesh-bg">
+        <div class="absolute inset-0 hero-grid"></div>
+        <!-- Decorative blurs -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-navy-600/10 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-72 h-72 bg-navy-400/8 rounded-full blur-[100px]"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 pt-20">
+            <div class="max-w-3xl">
+                <p class="text-navy-400 text-sm font-medium tracking-widest uppercase mb-6 reveal" style="transition-delay: 0ms">
+                    Software Engineer &middot; IoT Engineer
+                </p>
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1] mb-6 reveal" style="transition-delay: 100ms">
+                    Sebastian<br>
+                    <span class="gradient-text">Muchui</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-400 leading-relaxed max-w-xl mb-10 reveal" style="transition-delay: 200ms">
+                    Building scalable systems at the intersection of software, hardware, and connectivity. 
+                    Control &amp; Instrumentation student at JKUAT, currently engineering IoT solutions at CHAJI.
+                </p>
+                <div class="flex flex-wrap gap-4 mb-12 reveal" style="transition-delay: 300ms">
+                    <a href="https://calendly.com/astianmuchui" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-navy-600 hover:bg-navy-500 text-white rounded-lg font-medium transition-all hover:shadow-lg hover:shadow-navy-600/25">
+                        <i class="fas fa-calendar text-sm"></i> Schedule a Call
+                    </a>
+                    <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3 border border-white/10 hover:border-navy-400/40 text-slate-300 hover:text-white rounded-lg font-medium transition-all">
+                        View Projects <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+                <div class="flex items-center gap-5 reveal" style="transition-delay: 400ms">
+                    <a href="https://linkedin.com/in/astianmuchui" target="_blank" class="text-slate-500 hover:text-navy-400 transition-colors text-lg" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/astianmuchui" target="_blank" class="text-slate-500 hover:text-navy-400 transition-colors text-lg" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://medium.com/@astianmuchui" target="_blank" class="text-slate-500 hover:text-navy-400 transition-colors text-lg" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                    <a href="mailto:astianmuchui@gmail.com" class="text-slate-500 hover:text-navy-400 transition-colors text-lg" aria-label="Email"><i class="far fa-envelope"></i></a>
+                    <a href="https://x.com/astianmuchui" target="_blank" class="text-slate-500 hover:text-navy-400 transition-colors text-lg" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+                </div>
+            </div>
         </div>
 
-        <main>
-            <div>
-                <h1 data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100"> I am Sebastian Muchui</h1>
-                <p data-aos="fade-right" data-aos-duration="800" data-aos-delay="500">Software Engineer, Control and
-                    Instrumentation Student</p>
-                <div class="grid-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
-                    <a href="https://linkedin.com/in/astianmuchui"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/astianmuchui"><i class="fab fa-github"></i></a>
-                    <a href="mailto:astianmuchui@gmail.com"><i class="far fa-envelope"></i></a>
-                    <a href="https://x.com/astianmuchui"><i class="fab fa-twitter"></i></a>
-                </div>
-                <a href="https://calendly.com/astianmuchui" class="btn-primary" data-aos="fade-up"
-                    data-aos-duration="1000" data-aos-delay="1400"> <i class="fas fa-calendar"></i> Schedule a call</a>
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-600">
+            <span class="text-xs tracking-widest uppercase">Scroll</span>
+            <div class="w-px h-8 bg-gradient-to-b from-slate-600 to-transparent"></div>
+        </div>
+    </section>
 
-            </div>
-        </main>
-
-        <section class="">
-            <h1 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">Who am I ?</h1>
-
-            <div class="grid-2">
-                <div class="container">
-                    <div class="Grid-masonry" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
-                        <div class="Grid-masonry-item">
-                            <img src="./img/516A1599.jpg" alt="">
-                        </div>
-                        <div class="Grid-masonry-item">
-                            <img src="./img/IMG-20240912-WA0007.jpg" alt="">
-                        </div>
-
-                        <div class="Grid-masonry-item">
-                            <img src="./img/DSCN0198.JPG" alt="">
-                        </div>
-
-                        <div class="Grid-masonry-item">
-                            <img src="./img/session.jpeg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="text-container" data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="100">
-                    <h1>A Problem solver</h1>
-                    <p>
-                        I am a highly capable self-taught engineer with a vast array of experiences and skills that
-                        enable me approach different types of problems
-                        and work in multiple settings. Currently, I am an undergraduate Control and Instrumentation
-                        student and a certified software engineer.
-                        <br> <br>
-                        As a software engineer, I focus on the solution and it's sustainability. My programming
-                        background is vast, from web applications, to IoT and robotics. Other than that,
-                        I have substantial experience working with and setting up linux systems.
-                        <br><br>
-                        As a student, my aim is to learn as much as possible and apply it in the real world for research
-                        and come up with new innovative ways to solve problems.
-                    </p>
-                    <a href="https://calendly.com/astianmuchui" class="btn-primary"> <i class="fas fa-calendar"></i>
-                        Schedule a call</a>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h1 data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">My Skills</h1>
-
-            <div class="grid-2" data-aos="flip-up" data-aos-delay="100" data-aos-duration="1000">
-
-                <div class="web-container">
-                    <h1>Web Development</h1>
-                    <p>
-                        I have experience in building responsive and dynamic web applications using modern technologies.
-                        I am proficient in both front-end and back-end development, ensuring seamless integration and
-                        functionality.
-                        <br> <br>
-                        My Stack Includes
-                    </p>
-                    <ul class="fa-ul">
-                        <li><span class=""><i class="fab fa-html5"></i></span>HTML5</li>
-                        <li><span class=""><i class="fab fa-css3"></i></span>CSS / SCSS </li>
-                        <li><span class=""><i class="fab fa-js"></i></span>JavaScript / Typescript</li>
-                        <li><span class=""><i class="fab fa-react"></i></span>React / Next.js</li>
-                        <li><span class=""><i class="fab fa-node-js"></i></span>Node.js</li>
-                        <li><span class=""><i class="fas fa-code"></i></span>Go</li>
-                        <li><span class=""><i class="fab fa-laravel"></i></span>PHP / Laravel</li>
-                        <li><span class=""><i class="fab fa-python"></i></span>Python / Django</li>
-                        <li><span class=""><i class="fas fa-database"></i></span>SQL & NoSQL Databases</li>
-                        <li><span class=""><i class="fas fa-memory"></i></span>Redis</li>
-                        <li><span class=""><i class="fas fa-cloud"></i></span>Devops</li>
-                    </ul>
-                </div>
-                <div class="grid-1">
-                    <div>
-                        <h1>Hardware Development</h1>
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="relative py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal-left">
+                    <p class="text-navy-400 text-sm font-medium tracking-widest uppercase mb-4">About</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">A Problem Solver at the Crossroads of Software &amp; Hardware</h2>
+                    <div class="space-y-4 text-slate-400 leading-relaxed">
                         <p>
-                            I also have experience with hardware development, both on the firmware and circuitry to give
-                            the best possible solution
-                            <br> <br>
-                            My Skills Include
+                            I am a self-taught engineer with a vast array of experiences and skills that enable me to approach 
+                            different types of problems and work in multiple settings. Currently, I am an undergraduate 
+                            Control and Instrumentation student at Jomo Kenyatta University of Agriculture and Technology 
+                            and a certified software engineer through the ALX program.
                         </p>
-                        <ul class="fa-ul">
-                            <li><span class=""><i class="fas fa-microchip"></i></span>Arduino C/C++</li>
-                            <li><span class=""><i class="fas fa-bolt"></i></span>Circuitry skills</li>
-                            <li><span class=""><i class="fas fa-code"></i></span>RTOS</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h1>Linux and Commandline</h1>
                         <p>
-                            Additionally I have strong linux commandline skills that aid in my day to day endeavors
-                            <br> <br>
-                            They Include
+                            As a software engineer, I focus on the solution and its sustainability. My programming background 
+                            spans web applications, distributed systems, IoT, and robotics. I have substantial experience 
+                            working with and setting up Linux systems, building multi-protocol communication platforms, 
+                            and architecting backend services in Go, Node.js, and Python.
                         </p>
-                        <ul class="fa-ul">
-                            <li><span class=""><i class="fab fa-ubuntu"></i></span>Linux</li>
-                            <li><span class=""><i class="fas fa-code-branch"></i></span>Git</li>
-                            <li><span class=""><i class="fas fa-server"></i></span>Web Server configuration</li>
-                            <li><span class=""><i class="fab fa-docker"></i></span>Docker</li>
-                        </ul>
+                        <p>
+                            As a student, my aim is to learn as much as possible and apply it in the real world for research 
+                            and to come up with innovative ways to solve problems.
+                        </p>
+                    </div>
+                </div>
+                <div class="reveal-right">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-navy-600/10 rounded-2xl blur-2xl"></div>
+                        <div class="relative grid grid-cols-2 gap-3">
+                            <div class="space-y-3">
+                                <div class="rounded-xl overflow-hidden border border-white/5">
+                                    <img src="https://astianmuchui.github.io/img/516A1599.jpg" alt="Sebastian Muchui" class="w-full h-48 object-cover">
+                                </div>
+                                <div class="rounded-xl overflow-hidden border border-white/5">
+                                    <img src="https://astianmuchui.github.io/img/DSCN0198.JPG" alt="Sebastian at work" class="w-full h-36 object-cover">
+                                </div>
+                            </div>
+                            <div class="space-y-3 pt-8">
+                                <div class="rounded-xl overflow-hidden border border-white/5">
+                                    <img src="https://astianmuchui.github.io/img/IMG-20240912-WA0007.jpg" alt="Sebastian speaking" class="w-full h-36 object-cover">
+                                </div>
+                                <div class="rounded-xl overflow-hidden border border-white/5">
+                                    <img src="https://astianmuchui.github.io/img/session.jpeg" alt="Sebastian in session" class="w-full h-48 object-cover">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <a href="https://github.com/astianmuchui" class="btn-primary" data-aos="fade" data-aos-delay="100"
-                data-aos-duration="1000"> <i class="fab fa-github"></i>
-                Visit my github</a>
-        </section>
+        </div>
+    </section>
 
-        <section id="projects">
-            <h1 data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">My Projects</h1>
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section id="experience" class="relative py-32 mesh-bg">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <p class="text-navy-400 text-sm font-medium tracking-widest uppercase mb-4">Experience</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Where I Have Worked &amp; Studied</h2>
+            </div>
 
-            <div class="grid-2">
-                <img src="./img/maridadi.png" alt="" data-aos="fade-right" data-aos-delay="100"
-                    data-aos-duration="1000">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Work Experience -->
+                <div>
+                    <h3 class="text-lg font-semibold text-navy-400 mb-8 reveal">Professional</h3>
+                    <div class="space-y-8 stagger-children">
+                        <!-- CHAJI -->
+                        <div class="reveal relative pl-8 border-l border-white/10">
+                            <div class="absolute left-0 top-1 w-2 h-2 rounded-full bg-navy-500 -translate-x-[5px]"></div>
+                            <div class="flex flex-wrap items-center gap-2 mb-1">
+                                <h4 class="text-white font-semibold">IoT Engineer</h4>
+                                <span class="text-xs px-2 py-0.5 bg-navy-600/20 text-navy-400 rounded-full border border-navy-600/30">Current</span>
+                            </div>
+                            <p class="text-navy-400 text-sm font-medium mb-1">CHAJI Services Limited</p>
+                            <p class="text-slate-500 text-xs mb-3">May 2025 - Present &middot; Nairobi, Kenya</p>
+                            <ul class="space-y-2 text-slate-400 text-sm leading-relaxed">
+                                <li>Architected a distributed system using Go, Python, and Node.js, ensuring scalability and performance.</li>
+                                <li>Built multi-protocol communication systems with WebSockets, MQTT, and HTTP, and integrated OCPP/OCPI for EV charger interoperability.</li>
+                                <li>Enhanced efficiency through caching, ingest buffering, and automated database backup workflows.</li>
+                                <li>Set up CI/CD pipelines, observability mechanisms, and maintained REST APIs for mobile integration.</li>
+                                <li>Designed fintech billing systems supporting secure, reliable transaction processing.</li>
+                            </ul>
+                        </div>
 
-                <div class="text-container" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
-                    <h1>Maridadi Online</h1>
-                    <p>
-                        Maridadi online is an online store specializing mostly in aquarium products and ornamental fish.
-                        The websiite has multiple features such as multi-vendor support, payment integration and much
-                        more.
-                    </p>
-                    <a href="https://maridadionline.com" class="btn-primary"> <i class="fas fa-eye"></i>
-                        View Project</a>
+                        <!-- Disheey -->
+                        <div class="reveal relative pl-8 border-l border-white/10">
+                            <div class="absolute left-0 top-1 w-2 h-2 rounded-full bg-slate-600 -translate-x-[5px]"></div>
+                            <h4 class="text-white font-semibold">Software Engineer</h4>
+                            <p class="text-navy-400 text-sm font-medium mb-1">Disheey</p>
+                            <p class="text-slate-500 text-xs mb-3">May 2024 - Nov 2024 &middot; Nairobi, Kenya</p>
+                            <ul class="space-y-2 text-slate-400 text-sm leading-relaxed">
+                                <li>Translated Figma designs into responsive, high-performance frontends with modern web technologies.</li>
+                                <li>Integrated REST APIs to enable seamless communication between the frontend and backend services.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Davis & Shirtliff -->
+                        <div class="reveal relative pl-8 border-l border-white/10">
+                            <div class="absolute left-0 top-1 w-2 h-2 rounded-full bg-slate-600 -translate-x-[5px]"></div>
+                            <div class="flex flex-wrap items-center gap-2 mb-1">
+                                <h4 class="text-white font-semibold">Davis &amp; Shirtliff Hackathon</h4>
+                                <span class="text-xs px-2 py-0.5 bg-amber-500/10 text-amber-400 rounded-full border border-amber-500/20">MVP Award</span>
+                            </div>
+                            <p class="text-navy-400 text-sm font-medium mb-1">IoT Notifications, Alarms &amp; Triggers System</p>
+                            <p class="text-slate-500 text-xs mb-3">Nairobi, Kenya</p>
+                            <ul class="space-y-2 text-slate-400 text-sm leading-relaxed">
+                                <li>Led a team in building a distributed notification system to deliver real-time alerts and alarms for IoT devices across the Davis &amp; Shirtliff ecosystem.</li>
+                                <li>Engineered the platform to handle over 1,000 alerts daily, ensuring timely delivery of critical notifications to end users.</li>
+                                <li>Recognized with the MVP Award at the Davis &amp; Shirtliff Hackathon for innovation and impact in IoT monitoring solutions.</li>
+                            </ul>
+                            <a href="https://www.linkedin.com/posts/clive-kamaliki-801b09184_iot-idayliff-reporting-activity-7240029152437764097-sdJA/" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-navy-400 hover:text-navy-300 mt-2 transition-colors">
+                                <i class="fab fa-linkedin text-xs"></i> View on LinkedIn
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Leadership -->
+                    <h3 class="text-lg font-semibold text-navy-400 mt-12 mb-8 reveal">Leadership</h3>
+                    <div class="space-y-8 stagger-children">
+                        <div class="reveal relative pl-8 border-l border-white/10">
+                            <div class="absolute left-0 top-1 w-2 h-2 rounded-full bg-slate-600 -translate-x-[5px]"></div>
+                            <h4 class="text-white font-semibold">Co-Lead</h4>
+                            <p class="text-navy-400 text-sm font-medium mb-1">Google Developer Groups JKUAT</p>
+                            <p class="text-slate-500 text-xs mb-3">Sep 2024 - Sep 2025 &middot; Juja, Kenya</p>
+                            <ul class="space-y-2 text-slate-400 text-sm leading-relaxed">
+                                <li>Coordinated core team selection, managed club events, and led outreach activities that expanded membership by over 100 new sign-ups.</li>
+                                <li>Hosted technical sessions on Web Development, DevOps, and IoT to upskill members.</li>
+                            </ul>
+                        </div>
+                        <div class="reveal relative pl-8 border-l border-white/10">
+                            <div class="absolute left-0 top-1 w-2 h-2 rounded-full bg-slate-600 -translate-x-[5px]"></div>
+                            <h4 class="text-white font-semibold">IoT &amp; Robotics Lead</h4>
+                            <p class="text-navy-400 text-sm font-medium mb-1">Google Developer Student Clubs JKUAT</p>
+                            <p class="text-slate-500 text-xs mb-3">Sep 2023 - Sep 2024 &middot; Juja, Kenya</p>
+                            <ul class="space-y-2 text-slate-400 text-sm leading-relaxed">
+                                <li>Organized and facilitated hands-on workshops, training 20 mentees in IoT and Robotics fundamentals.</li>
+                                <li>Supported outreach initiatives that successfully onboarded new members into the GDSC community.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div>
+                    <h3 class="text-lg font-semibold text-navy-400 mb-8 reveal">Education</h3>
+                    <div class="space-y-8 stagger-children">
+                        <!-- JKUAT -->
+                        <div class="reveal relative pl-8 border-l border-white/10">
+                            <div class="absolute left-0 top-1 w-2 h-2 rounded-full bg-navy-500 -translate-x-[5px]"></div>
+                            <div class="flex flex-wrap items-center gap-2 mb-1">
+                                <h4 class="text-white font-semibold">BSc. Control &amp; Instrumentation</h4>
+                                <span class="text-xs px-2 py-0.5 bg-navy-600/20 text-navy-400 rounded-full border border-navy-600/30">In Progress</span>
+                            </div>
+                            <p class="text-navy-400 text-sm font-medium mb-1">Jomo Kenyatta University of Agriculture and Technology</p>
+                            <p class="text-slate-500 text-xs">Sep 2022 - Present &middot; Juja, Kenya</p>
+                        </div>
+
+                        <!-- ALX -->
+                        <div class="reveal relative pl-8 border-l border-white/10">
+                            <div class="absolute left-0 top-1 w-2 h-2 rounded-full bg-slate-600 -translate-x-[5px]"></div>
+                            <h4 class="text-white font-semibold">Software Engineering</h4>
+                            <p class="text-navy-400 text-sm font-medium mb-1">ALX Holberton</p>
+                            <p class="text-slate-500 text-xs mb-3">Nov 2022 - Jun 2024 &middot; Nairobi, Kenya</p>
+                            <p class="text-slate-400 text-sm mb-3">12-month intensive programme with a specialization in Back-end development.</p>
+                            <!-- ALX Certificate -->
+                            <div class="mt-4 p-4 rounded-xl border border-white/5 bg-white/[0.02]">
+                                <div class="flex items-start gap-4">
+                                    <div class="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border border-white/10 bg-slate-900">
+                                        <img src="./img/alx-certificate.png" alt="ALX Certificate" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-white text-sm font-medium">Certificate of Completion</p>
+                                        <p class="text-slate-500 text-xs mb-2">Program completed: June 7, 2024</p>
+                                        <a href="https://savanna.alxafrica.com/certificates/BNHGzyRX65" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-navy-400 hover:text-navy-300 transition-colors">
+                                            <i class="fas fa-external-link-alt text-[10px]"></i> Verify Certificate
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- JKUAT Bootcamp -->
+                        <div class="reveal relative pl-8 border-l border-white/10">
+                            <div class="absolute left-0 top-1 w-2 h-2 rounded-full bg-slate-600 -translate-x-[5px]"></div>
+                            <h4 class="text-white font-semibold">Inspire Youth in STEM Bootcamp</h4>
+                            <p class="text-navy-400 text-sm font-medium mb-1">Jomo Kenyatta University of Agriculture and Technology</p>
+                            <p class="text-slate-500 text-xs">May 2022 - Jul 2022</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <!-- ===================== SKILLS ===================== -->
+    <section id="skills" class="relative py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <p class="text-navy-400 text-sm font-medium tracking-widest uppercase mb-4">Skills</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Technical Stack</h2>
+            </div>
 
-            <div class="grid-2">
-                <img src="./img/robot2022.jpg" alt="" data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000"
-                    class="virtual">
-
-                <div class="text-container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                    <h1>RO-04 Robot</h1>
-                    <p>
-                        The RO-04 robot was part of the robotics dojo competittion in 2022, the objective was to build a
-                        robot with line following, obstacle avoidance and maze solving capabilities.
-                    </p>
-                    <a href="https://github.com/Teamro04/firmware1.0/" class="btn-primary"> <i
-                            class="fab fa-github"></i>
-                        View Project</a>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
+                <!-- Languages -->
+                <div class="reveal p-6 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
+                    <div class="w-10 h-10 rounded-lg bg-navy-600/10 border border-navy-600/20 flex items-center justify-center mb-4">
+                        <i class="fas fa-code text-navy-400"></i>
+                    </div>
+                    <h3 class="text-white font-semibold mb-3">Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">Go</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">Rust</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">TypeScript</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">JavaScript</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">PHP</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">Python</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">C</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">C++</span>
+                    </div>
                 </div>
-                <img src="./img/robot2022.jpg" alt="" data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000"
-                    class="real">
 
-            </div>
+                <!-- Frameworks & Web -->
+                <div class="reveal p-6 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
+                    <div class="w-10 h-10 rounded-lg bg-navy-600/10 border border-navy-600/20 flex items-center justify-center mb-4">
+                        <i class="fas fa-layer-group text-navy-400"></i>
+                    </div>
+                    <h3 class="text-white font-semibold mb-3">Frameworks &amp; Web</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">React</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">Next.js</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">Node.js</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">Django</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">Laravel</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">HTML / CSS</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">SCSS</span>
+                    </div>
+                </div>
 
-            <div class="grid-2">
-                <img src="./img/halcyon.png" alt="" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+                <!-- Infrastructure -->
+                <div class="reveal p-6 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
+                    <div class="w-10 h-10 rounded-lg bg-navy-600/10 border border-navy-600/20 flex items-center justify-center mb-4">
+                        <i class="fas fa-server text-navy-400"></i>
+                    </div>
+                    <h3 class="text-white font-semibold mb-3">Infrastructure</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">Linux</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">Docker</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">Git</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">GitHub Actions</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">GitLab CI</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">Redis</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">SQL / NoSQL</span>
+                    </div>
+                </div>
 
-                <div class="text-container" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
-                    <h1>Halcyon CSS</h1>
-                    <p>
-                        A minimal CSS library to help build user interfaces fast. The library is available via CDN and
-                        will be documented soon.
-                    </p>
-                    <a href="https://github.com/astianmuchui/Halcyon.css" class="btn-primary"> <i
-                            class="fab fa-github"></i>
-                        View Project</a>
+                <!-- Hardware & IoT -->
+                <div class="reveal p-6 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
+                    <div class="w-10 h-10 rounded-lg bg-navy-600/10 border border-navy-600/20 flex items-center justify-center mb-4">
+                        <i class="fas fa-microchip text-navy-400"></i>
+                    </div>
+                    <h3 class="text-white font-semibold mb-3">Hardware &amp; IoT</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">Distributed Systems</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">MQTT</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">Arduino</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">ESP32</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">FreeRTOS</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">STM32</span>
+                        <span class="skill-tag text-xs px-2.5 py-1 rounded-md border border-white/10 text-slate-400 bg-white/[0.02]">Circuit Design</span>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="grid-2">
-                <img src="./img/carbon.png" alt="" data-aos="fade-up-left" data-aos-delay="100" data-aos-duration="1000"
-                    class="virtual">
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects" class="relative py-32 mesh-bg">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <p class="text-navy-400 text-sm font-medium tracking-widest uppercase mb-4">Projects</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Things I Have Built</h2>
+            </div>
 
-                <div class="text-container" data-aos="fade-up-right" data-aos-duration="1000" data-aos-delay="100">
-                    <h1>PixelSequel Query builder</h1>
-                    <p>
-                        A lightweight and easy to use query builder for PHP projects available as a composer package
-                    </p>
-                    <a href="https://astianmuchui.github.io/PixelSequel/home" class="btn-primary"> <i
-                            class="fas fa-eye"></i>
-                        View Project</a>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
+
+                <!-- NexThings IoT -->
+                <div class="reveal group p-6 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-navy-600/10 border border-navy-600/20 flex items-center justify-center">
+                            <i class="fas fa-network-wired text-navy-400"></i>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/astianmuchui" target="_blank" class="text-slate-500 hover:text-navy-400 transition-colors"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-navy-400 transition-colors">NexThings IoT Core</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">A modular, multi-protocol IoT platform designed for scalability, real-time message streaming, customizable analytics, and flexible alerting systems.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">Go</span>
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">MQTT</span>
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">WebSockets</span>
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">Kafka</span>
+                    </div>
                 </div>
-                <img src="./img/carbon.png" alt="" data-aos="fade-up-left" data-aos-delay="100" data-aos-duration="1000"
-                    class="real">
+
+                <!-- Kijaru Lydiah -->
+                <div class="reveal group p-6 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-navy-600/10 border border-navy-600/20 flex items-center justify-center">
+                            <i class="fas fa-globe text-navy-400"></i>
+                        </div>
+                        <a href="https://www.kijarulydiahandcoadvocates.com/" target="_blank" class="text-slate-500 hover:text-navy-400 transition-colors"><i class="fas fa-external-link-alt text-sm"></i></a>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-navy-400 transition-colors">Kijaru Lydiah &amp; Co. Advocates</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Professional website for a law firm, featuring a clean and authoritative design with comprehensive service information and client resources.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">Web Design</span>
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">Frontend</span>
+                    </div>
+                </div>
+
+                <!-- Daraja-Go -->
+                <div class="reveal group p-6 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-navy-600/10 border border-navy-600/20 flex items-center justify-center">
+                            <i class="fas fa-wallet text-navy-400"></i>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/astianmuchui/daraja-go" target="_blank" class="text-slate-500 hover:text-navy-400 transition-colors"><i class="fab fa-github"></i></a>
+                            <a href="https://pkg.go.dev/github.com/astianmuchui/daraja-go" target="_blank" class="text-slate-500 hover:text-navy-400 transition-colors"><i class="fas fa-external-link-alt text-sm"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-navy-400 transition-colors">Daraja-Go</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">A minimal Daraja API wrapper for Go. Published on pkg.go.dev for easy integration of M-Pesa payment services into Go applications.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">Go</span>
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">M-Pesa API</span>
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">Package</span>
+                    </div>
+                </div>
+
+                <!-- PixelSequel -->
+                <div class="reveal group p-6 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-navy-600/10 border border-navy-600/20 flex items-center justify-center">
+                            <i class="fas fa-database text-navy-400"></i>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/astianmuchui/PixelSequel" target="_blank" class="text-slate-500 hover:text-navy-400 transition-colors"><i class="fab fa-github"></i></a>
+                            <a href="https://astianmuchui.github.io/PixelSequel/home" target="_blank" class="text-slate-500 hover:text-navy-400 transition-colors"><i class="fas fa-external-link-alt text-sm"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-navy-400 transition-colors">PixelSequel ORM</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">A lightweight PHP Object-Relational Mapper for MySQL databases, built on top of the PHP Standard Library. Published on Packagist with 20+ installs.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">PHP</span>
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">MySQL</span>
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">ORM</span>
+                    </div>
+                </div>
+
+                <!-- URL Shortener -->
+                <div class="reveal group p-6 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-navy-600/10 border border-navy-600/20 flex items-center justify-center">
+                            <i class="fas fa-link text-navy-400"></i>
+                        </div>
+                        <a href="https://github.com/astianmuchui/url-shortener" target="_blank" class="text-slate-500 hover:text-navy-400 transition-colors"><i class="fab fa-github"></i></a>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-navy-400 transition-colors">URL Shortener</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">A fast URL shortener service built in Go, designed for clean short links with efficient redirect handling.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">Go</span>
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">Backend</span>
+                    </div>
+                </div>
+
+                <!-- Maridadi Online -->
+                <div class="reveal group p-6 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-navy-600/10 border border-navy-600/20 flex items-center justify-center">
+                            <i class="fas fa-shopping-cart text-navy-400"></i>
+                        </div>
+                        <a href="https://maridadionline.com" target="_blank" class="text-slate-500 hover:text-navy-400 transition-colors"><i class="fas fa-external-link-alt text-sm"></i></a>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-navy-400 transition-colors">Maridadi Online</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">An e-commerce platform specializing in aquarium products and ornamental fish, with multi-vendor support and payment integration.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">E-commerce</span>
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">Full Stack</span>
+                    </div>
+                </div>
+
+                <!-- RO-04 Robot -->
+                <div class="reveal group p-6 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-navy-600/10 border border-navy-600/20 flex items-center justify-center">
+                            <i class="fas fa-robot text-navy-400"></i>
+                        </div>
+                        <a href="https://github.com/Teamro04/firmware1.0/" target="_blank" class="text-slate-500 hover:text-navy-400 transition-colors"><i class="fab fa-github"></i></a>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-navy-400 transition-colors">RO-04 Robot</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Robotics Dojo competition entry (2022). A robot with line following, obstacle avoidance, and maze solving capabilities.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">C/C++</span>
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">Arduino</span>
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">Robotics</span>
+                    </div>
+                </div>
+
+                <!-- Simple Shell -->
+                <div class="reveal group p-6 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-navy-600/10 border border-navy-600/20 flex items-center justify-center">
+                            <i class="fas fa-terminal text-navy-400"></i>
+                        </div>
+                        <a href="https://github.com/astianmuchui" target="_blank" class="text-slate-500 hover:text-navy-400 transition-colors"><i class="fab fa-github"></i></a>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-navy-400 transition-colors">Unix Shell Interpreter</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">A custom Unix shell implementation in C, built as part of the ALX Software Engineering program. Supports interactive and non-interactive modes, built-in commands, and PATH resolution.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">C</span>
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">Systems Programming</span>
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">ALX</span>
+                    </div>
+                </div>
+
+                <!-- Halcyon CSS -->
+                <div class="reveal group p-6 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-navy-600/10 border border-navy-600/20 flex items-center justify-center">
+                            <i class="fab fa-css3-alt text-navy-400"></i>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-[10px] text-slate-500 px-2 py-0.5 border border-white/10 rounded">Archived</span>
+                            <a href="https://github.com/astianmuchui/Halcyon.css" target="_blank" class="text-slate-500 hover:text-navy-400 transition-colors"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-navy-400 transition-colors">Halcyon CSS</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">A minimal CSS library to help build user interfaces fast, available via CDN.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">CSS</span>
+                        <span class="text-[11px] text-slate-500 px-2 py-0.5 bg-white/5 rounded">Library</span>
+                    </div>
+                </div>
 
             </div>
+        </div>
+    </section>
 
-            <div class="grid-2">
-                <img src="./img/audconv.png" alt="" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+    <!-- ===================== BLOG ===================== -->
+    <section id="blog" class="relative py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <p class="text-navy-400 text-sm font-medium tracking-widest uppercase mb-4">Blog</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Writing on Medium</h2>
+                <p class="text-slate-400 mt-3 max-w-lg mx-auto">I write about systems programming, IoT, Go, and my experiences in tech.</p>
+            </div>
 
-                <div class="text-container" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
-                    <h1>PDF to Audiobook converter</h1>
-                    <p>
-                        A commandline tool that helps you convert pdfs to audio files that one can listen to. The tool
-                        has male and female voice options too.
+            <div class="grid sm:grid-cols-2 gap-6 stagger-children">
+                <!-- Article 1 -->
+                <a href="https://astianmuchui.medium.com/mqtt-protocol-implementation-in-go-ec4edfa315d2" target="_blank" class="reveal group p-6 rounded-2xl border border-white/5 bg-white/[0.02] card-hover block">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i class="fab fa-medium text-slate-500 text-sm"></i>
+                        <span class="text-xs text-slate-500">Medium</span>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-navy-400 transition-colors">MQTT Protocol Implementation in Go</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">A deep dive into implementing the MQTT protocol for IoT communication using Go, covering connection handling, message publishing, and subscription management.</p>
+                    <span class="inline-flex items-center gap-1 text-navy-400 text-sm mt-4 group-hover:gap-2 transition-all">Read article <i class="fas fa-arrow-right text-xs"></i></span>
+                </a>
+
+                <!-- Article 2 -->
+                <a href="https://astianmuchui.medium.com/build-a-simple-user-registration-and-login-system-using-go-fiber-d3d239753039" target="_blank" class="reveal group p-6 rounded-2xl border border-white/5 bg-white/[0.02] card-hover block">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i class="fab fa-medium text-slate-500 text-sm"></i>
+                        <span class="text-xs text-slate-500">Medium</span>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-navy-400 transition-colors">Build a User Registration &amp; Login System with Go Fiber</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Step-by-step guide to building authentication systems using the Go Fiber framework, covering user registration, login, password hashing, and session management.</p>
+                    <span class="inline-flex items-center gap-1 text-navy-400 text-sm mt-4 group-hover:gap-2 transition-all">Read article <i class="fas fa-arrow-right text-xs"></i></span>
+                </a>
+
+                <!-- Article 3 -->
+                <a href="https://astianmuchui.medium.com/no-ethernet-port-and-still-want-to-install-arch-no-problem-0a58152d952b" target="_blank" class="reveal group p-6 rounded-2xl border border-white/5 bg-white/[0.02] card-hover block">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i class="fab fa-medium text-slate-500 text-sm"></i>
+                        <span class="text-xs text-slate-500">Medium</span>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-navy-400 transition-colors">No Ethernet Port? Installing Arch Linux over WiFi</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">A practical guide for Linux enthusiasts on installing Arch Linux on machines without an ethernet port, using wireless networking during the installation process.</p>
+                    <span class="inline-flex items-center gap-1 text-navy-400 text-sm mt-4 group-hover:gap-2 transition-all">Read article <i class="fas fa-arrow-right text-xs"></i></span>
+                </a>
+
+                <!-- Article 4 -->
+                <a href="https://astianmuchui.medium.com/my-journey-in-tech-part-iv-the-bootcamp-3722980819ac" target="_blank" class="reveal group p-6 rounded-2xl border border-white/5 bg-white/[0.02] card-hover block">
+                    <div class="flex items-center gap-2 mb-3">
+                        <i class="fab fa-medium text-slate-500 text-sm"></i>
+                        <span class="text-xs text-slate-500">Medium</span>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-navy-400 transition-colors">My Journey in Tech Part IV: The Bootcamp</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Reflections on the ALX Software Engineering bootcamp experience, the challenges of intensive learning, and the growth that comes from committing to something long-term.</p>
+                    <span class="inline-flex items-center gap-1 text-navy-400 text-sm mt-4 group-hover:gap-2 transition-all">Read article <i class="fas fa-arrow-right text-xs"></i></span>
+                </a>
+            </div>
+
+            <div class="text-center mt-10 reveal">
+                <a href="https://medium.com/@astianmuchui" target="_blank" class="inline-flex items-center gap-2 text-sm text-navy-400 hover:text-navy-300 transition-colors">
+                    <i class="fab fa-medium"></i> Read more on Medium <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" class="relative py-32 mesh-bg">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center">
+                <div class="reveal">
+                    <p class="text-navy-400 text-sm font-medium tracking-widest uppercase mb-4">Contact</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Let's Work Together</h2>
+                    <p class="text-slate-400 leading-relaxed mb-10">
+                        Whether you have a project in mind, need an IoT solution, or just want to connect, 
+                        I am always open to conversations about technology and collaboration.
                     </p>
-                    <a href="https://github.com/astianmuchui/pdf-audiobook-converter" class="btn-primary"> <i
-                            class="fab fa-github"></i>
-                        View Project</a>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal" style="transition-delay: 100ms">
+                    <a href="mailto:astianmuchui@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 bg-navy-600 hover:bg-navy-500 text-white rounded-lg font-medium transition-all hover:shadow-lg hover:shadow-navy-600/25">
+                        <i class="far fa-envelope"></i> astianmuchui@gmail.com
+                    </a>
+                    <a href="https://calendly.com/astianmuchui" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 border border-white/10 hover:border-navy-400/40 text-slate-300 hover:text-white rounded-lg font-medium transition-all">
+                        <i class="fas fa-calendar"></i> Schedule a Call
+                    </a>
+                </div>
+
+                <div class="mt-8 flex items-center justify-center gap-2 text-slate-500 text-sm reveal" style="transition-delay: 200ms">
+                    <i class="fas fa-phone-alt text-xs"></i>
+                    <span>+254 797 061 691 / +254 716 590 423</span>
+                </div>
+
+                <div class="flex items-center justify-center gap-6 mt-10 reveal" style="transition-delay: 300ms">
+                    <a href="https://linkedin.com/in/astianmuchui" target="_blank" class="text-slate-500 hover:text-navy-400 transition-colors text-xl" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/astianmuchui" target="_blank" class="text-slate-500 hover:text-navy-400 transition-colors text-xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://medium.com/@astianmuchui" target="_blank" class="text-slate-500 hover:text-navy-400 transition-colors text-xl" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                    <a href="https://x.com/astianmuchui" target="_blank" class="text-slate-500 hover:text-navy-400 transition-colors text-xl" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="border-t border-white/5 py-8">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-slate-600">
+                Sebastian Muchui &copy; 2025. All rights reserved.
+            </p>
+            <a href="https://astianmuchui.space" class="text-sm text-slate-600 hover:text-slate-400 transition-colors">
+                astianmuchui.space
+            </a>
+        </div>
+    </footer>
 
-        </section>
+    <!-- ===================== SCRIPTS ===================== -->
+    <script>
+        // ---- Intersection Observer for scroll animations ----
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -60px 0px',
+            threshold: 0.1
+        };
 
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
 
-        <section id="reach-out">
-            <h1 data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">How to Reach Me</h1>
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+            observer.observe(el);
+        });
 
-            <div data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
-                <ul class="fa-ul">
-                    <li><span class=""><i class="far fa-envelope"></i></span>astianmuchui@gmail.com</li>
-                    <li><span class=""><i class="fas fa-phone-alt"></i></span>+254797061691 / +254716590423</li>
-                </ul>
-            </div>
-        </section>
+        // ---- Header background on scroll ----
+        const header = document.getElementById('header');
+        let lastScrollY = 0;
 
-        <footer class="flex-column">
-            <h2>Made by Sebastian Muchui &copy; 2024 </h2>
-        </footer>
-        <script src="./js/main.js"></script>
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            if (scrollY > 50) {
+                header.classList.add('border-white/10');
+                header.classList.remove('border-white/5');
+            } else {
+                header.classList.remove('border-white/10');
+                header.classList.add('border-white/5');
+            }
+            lastScrollY = scrollY;
+        });
 
-        <script>
-            AOS.init()
-        </script>
-    </body>
+        // ---- Mobile Menu ----
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
 
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        function closeMenu() {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        menuClose.addEventListener('click', closeMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+        // ---- Active nav link highlight ----
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('text-white');
+                link.classList.add('text-slate-400');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-white');
+                    link.classList.remove('text-slate-400');
+                }
+            });
+        });
+    </script>
+</body>
 </html>
