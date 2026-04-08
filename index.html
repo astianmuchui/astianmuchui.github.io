@@ -61,6 +61,8 @@
                 <nav class="hidden md:flex items-center gap-8">
                     <a href="#about"
                         class="text-sm text-slate-600 hover:text-slate-900 transition-colors link-underline">About</a>
+                    <a href="#featured"
+                        class="text-sm text-slate-600 hover:text-slate-900 transition-colors link-underline">Featured</a>
                     <a href="#experience"
                         class="text-sm text-slate-600 hover:text-slate-900 transition-colors link-underline">Experience</a>
                     <a href="#skills"
@@ -98,6 +100,7 @@
             class="mobile-menu fixed inset-0 z-[60] bg-white/[0.98] header-blur flex flex-col items-center justify-center gap-8">
             <button id="menu-close" class="absolute top-5 right-6 text-slate-900 text-3xl">&times;</button>
             <a href="#about" class="text-xl text-slate-700 hover:text-slate-900 transition-colors mobile-link">About</a>
+            <a href="#featured" class="text-xl text-slate-700 hover:text-slate-900 transition-colors mobile-link">Featured</a>
             <a href="#experience"
                 class="text-xl text-slate-700 hover:text-slate-900 transition-colors mobile-link">Experience</a>
             <a href="#skills"
@@ -220,21 +223,96 @@
                     <div class="reveal-right">
                         <div class="relative">
                             <div class="absolute -inset-4 bg-navy-300/15 rounded-2xl blur-2xl"></div>
-                            <div class="relative grid grid-cols-2 gap-3">
-                                <div class="space-y-3">
-                                    <div class="rounded-xl overflow-hidden border border-blue-100 shadow-sm">
-                                        <img src="https://astianmuchui.github.io/img/516A1599.jpg"
-                                            alt="Sebastian Muchui" class="w-full h-64 object-cover">
-                                    </div>
-                                </div>
-                                <div class="space-y-3 pt-8">
-                                    <div class="rounded-xl overflow-hidden border border-blue-100 shadow-sm">
-                                        <img src="https://astianmuchui.github.io/img/DSCN0198.JPG"
-                                            alt="Sebastian at work" class="w-full h-64 object-cover">
-                                    </div>
-                                </div>
+                            <div class="rounded-xl overflow-hidden border border-blue-100 shadow-sm">
+                                <img src="https://astianmuchui.github.io/img/516A1599.jpg"
+                                    alt="Sebastian Muchui" class="w-full h-96 object-cover">
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===================== FEATURED ===================== -->
+        <section id="featured" class="relative py-32 mesh-bg">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16 reveal">
+                    <p class="text-navy-600 text-sm font-medium tracking-widest uppercase mb-4">In the Media</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">Featured Moment</h2>
+                    <p class="text-slate-600 mt-3 max-w-xl mx-auto">
+                        Selected for a feature interview after completing the JKUAT Inspire Youth in STEM bootcamp &mdash;
+                        an intensive 8-week programme covering web development, Python, JavaScript, and robotics.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
+
+                    <!-- YouTube embed -->
+                    <div class="reveal-left">
+                        <div class="relative rounded-2xl overflow-hidden border border-blue-100 shadow-sm glow-blue">
+                            <div class="aspect-video">
+                                <iframe
+                                    src="https://www.youtube.com/embed/zw7RzUNamV8"
+                                    title="JKUAT Inspire Youth in STEM — Sebastian Muchui"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                    class="w-full h-full">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Context & links -->
+                    <div class="reveal-right space-y-6">
+
+                        <div class="bg-white rounded-2xl border border-blue-100 shadow-sm p-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-navy-100 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-graduation-cap text-navy-600 text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-slate-900 font-semibold text-sm">JKUAT Inspire Youth in STEM</p>
+                                    <p class="text-slate-500 text-xs">February 2025 &middot; Nairobi, Kenya</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                After completing the <span class="font-medium text-slate-700">JKUAT Inspire Youth in STEM</span>
+                                bootcamp, I was selected alongside fellow participants for a media feature interview. The programme
+                                offered hands-on training in web development (portfolio sites, games, calculators), Python, JavaScript,
+                                and robotics competitions &mdash; all culminating in a completion certificate.
+                            </p>
+                        </div>
+
+                        <blockquote class="rounded-xl p-5 border-l-4 border-navy-400" style="background: rgba(51,102,255,0.04);">
+                            <p class="text-slate-700 text-sm leading-relaxed italic">
+                                "The experience was very hands on and challenging &mdash; we had something new to learn every single day, with take-home assignments to push it further."
+                            </p>
+                            <footer class="mt-3 text-navy-600 text-xs font-semibold">— Sebastian Muchui</footer>
+                        </blockquote>
+
+                        <div>
+                            <p class="text-slate-500 text-xs font-medium uppercase tracking-widest mb-3">Also featured on</p>
+                            <div class="flex flex-wrap gap-3">
+                                <a href="https://www.linkedin.com/posts/jkuat_meet-the-bright-minds-shaping-tomorrow-having-activity-7292880204224462849-0V9l"
+                                    target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-blue-100 bg-white text-slate-600 text-sm hover:border-navy-300 hover:text-navy-600 transition-all card-hover">
+                                    <i class="fab fa-linkedin" style="color: #0077B5;"></i> LinkedIn
+                                </a>
+                                <a href="https://www.facebook.com/DiscoverJKUAT/videos/jkuat-inspire-youth-in-stem/1339094173693159/"
+                                    target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-blue-100 bg-white text-slate-600 text-sm hover:border-navy-300 hover:text-navy-600 transition-all card-hover">
+                                    <i class="fab fa-facebook" style="color: #1877F2;"></i> Facebook
+                                </a>
+                                <a href="https://www.instagram.com/discoverjkuat/reel/DFsN4OEvG4m/"
+                                    target="_blank"
+                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-blue-100 bg-white text-slate-600 text-sm hover:border-navy-300 hover:text-navy-600 transition-all card-hover">
+                                    <i class="fab fa-instagram" style="color: #E1306C;"></i> Instagram
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
