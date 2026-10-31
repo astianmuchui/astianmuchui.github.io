@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://astianmuchui.tech/sitemap.xml

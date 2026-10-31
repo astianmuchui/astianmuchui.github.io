@@ -5,39 +5,138 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="theme-color" content="#000000">
+        <meta name="color-scheme" content="dark">
+        <title>Sebastian Muchui — Software Engineer in Nairobi | Go, Backend &amp; IoT</title>
         <meta name="description"
-            content="Sebastian Muchui - Lead Software Engineer &amp; IoT Engineer building backends, telemetry platforms and connected hardware.">
-        <meta name="keywords" content="Sebastian Muchui, astianmuchui, Software Engineer, IoT Engineer, Go, OCPP, Kenya">
+            content="Sebastian Muchui is a software engineer in Nairobi, Kenya, focused on backend development, system design and IoT: Go services, MQTT and OCPP platforms, and ESP32 firmware.">
         <meta name="author" content="Sebastian Muchui">
-        <meta property="og:title" content="Sebastian Muchui - Software &amp; IoT Engineer">
-        <meta property="og:description" content="Building systems at the intersection of software, hardware and connectivity.">
-        <meta property="og:image" content="https://astianmuchui.tech/img/web/516a1599.jpg">
-        <title>Sebastian Muchui - Software &amp; IoT Engineer</title>
+        <meta name="robots" content="index, follow, max-image-preview:large">
+        <link rel="canonical" href="https://astianmuchui.tech/">
+
+        <meta property="og:type" content="profile">
+        <meta property="og:site_name" content="Sebastian Muchui">
+        <meta property="og:url" content="https://astianmuchui.tech/">
+        <meta property="og:title" content="Sebastian Muchui — Software Engineer in Nairobi">
+        <meta property="og:description" content="Backend development, system design and IoT: Go services, MQTT and OCPP platforms, and ESP32 firmware.">
+        <meta property="og:image" content="https://astianmuchui.tech/img/og-image.jpg">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:alt" content="Sebastian Muchui, Software Engineer in Nairobi">
+        <meta property="profile:first_name" content="Sebastian">
+        <meta property="profile:last_name" content="Muchui">
+        <meta property="profile:username" content="astianmuchui">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@astianmuchui">
+        <meta name="twitter:creator" content="@astianmuchui">
+        <meta name="twitter:title" content="Sebastian Muchui — Software Engineer in Nairobi">
+        <meta name="twitter:description" content="Backend development, system design and IoT: Go services, MQTT and OCPP platforms, and ESP32 firmware.">
+        <meta name="twitter:image" content="https://astianmuchui.tech/img/og-image.jpg">
+
+        <link rel="icon" href="favicon.svg" type="image/svg+xml">
+        <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+        <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sebastian Muchui",
+  "alternateName": "astianmuchui",
+  "url": "https://astianmuchui.tech/",
+  "image": "https://astianmuchui.tech/img/web/avatar.webp",
+  "jobTitle": "Software Engineer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "CHAJI Services Limited"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Nairobi",
+    "addressCountry": "KE"
+  },
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Jomo Kenyatta University of Agriculture and Technology"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "ALX Holberton"
+    }
+  ],
+  "knowsAbout": [
+    "Go",
+    "Backend development",
+    "System design",
+    "IoT",
+    "MQTT",
+    "OCPP",
+    "Embedded systems",
+    "ESP32",
+    "Kubernetes",
+    "Docker",
+    "M-Pesa Daraja API"
+  ],
+  "email": "mailto:astianmuchui@gmail.com",
+  "sameAs": [
+    "https://github.com/astianmuchui",
+    "https://linkedin.com/in/astianmuchui",
+    "https://x.com/astianmuchui",
+    "https://medium.com/@astianmuchui"
+  ]
+}
+        </script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500;600&display=swap"
-            rel="stylesheet">
-        <script src="https://kit.fontawesome.com/84b6428a50.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+        <link rel="preconnect" href="https://ka-f.fontawesome.com" crossorigin>
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" as="script" crossorigin>
+        <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
+            href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500;600&display=swap">
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500;600&display=swap"></noscript>
+        <script src="https://kit.fontawesome.com/84b6428a50.js" crossorigin="anonymous" defer></script>
         <link rel="stylesheet" href="css/site.css">
     </head>
 
     <body>
+        <!-- Boot screen -->
+        <div class="preloader" id="preloader" aria-hidden="true">
+            <div class="pl-panel pl-a"></div>
+            <div class="pl-panel pl-b"></div>
+            <div class="pl-inner">
+                <div class="pl-log" id="pl-log"></div>
+                <div class="pl-count"><span id="pl-num">0</span><small>%</small></div>
+                <div class="pl-bar"><span id="pl-bar"></span></div>
+                <div class="pl-foot"><span>astianmuchui.tech</span><span>nairobi · ke</span></div>
+            </div>
+        </div>
+
+        <canvas id="gl" class="gl" aria-hidden="true"></canvas>
+        <div class="vignette" aria-hidden="true"></div>
         <div class="noise" aria-hidden="true"></div>
         <div class="progress" aria-hidden="true"></div>
-        <div class="cursor-glow" aria-hidden="true"></div>
+        <div class="cursor" aria-hidden="true">
+            <div class="cursor-ring"><span class="cursor-label"></span></div>
+            <div class="cursor-dot"></div>
+        </div>
+        <div class="hud" aria-hidden="true">
+            <div class="hud-l"><b id="hud-idx">00</b><span class="hud-line"></span><span id="hud-label">INDEX</span></div>
+            <div class="hud-r"><span>SCROLL</span><b id="hud-pct">000</b><span>%</span></div>
+        </div>
 
         <!-- Header -->
         <header id="header" class="header">
-            <a href="#" class="logo" aria-label="Home">
+            <a href="#top" class="logo">
                 <span class="logo-mark">SM</span>
-                <span>astianmuchui<span class="caret">_</span></span>
+                <span>astianmuchui<span class="caret-blink">_</span></span>
             </a>
             <nav class="nav">
                 <a href="#about">About</a>
                 <a href="#experience">Experience</a>
                 <a href="#stack">Stack</a>
                 <a href="#projects">Projects</a>
+                <a href="#lab">Lab</a>
                 <a href="#writing">Writing</a>
                 <a href="#contact">Contact</a>
             </nav>
@@ -45,7 +144,7 @@
                 <a href="https://github.com/sponsors/astianmuchui" target="_blank" class="btn btn-ghost btn-sm">
                     <i class="fas fa-heart" style="color:#ec4899"></i> Sponsor
                 </a>
-                <a href="https://drive.google.com/file/d/1jzXQ1ZIk9eeE_49qpODpXSQJCmjKhBrT/view?usp=sharing"
+                <a href="downloads/Sebastian-Muchui-Resume.pdf"
                     target="_blank" class="btn btn-primary btn-sm">Resume <i class="fas fa-arrow-right arrow"></i></a>
                 <button id="menu-toggle" class="menu-btn" aria-label="Open menu">
                     <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -61,10 +160,11 @@
             <a href="#experience" class="m-link"><span>02</span>Experience</a>
             <a href="#stack" class="m-link"><span>03</span>Stack</a>
             <a href="#projects" class="m-link"><span>04</span>Projects</a>
-            <a href="#writing" class="m-link"><span>05</span>Writing</a>
-            <a href="#contact" class="m-link"><span>06</span>Contact</a>
+            <a href="#lab" class="m-link"><span>05</span>Lab</a>
+            <a href="#writing" class="m-link"><span>06</span>Writing</a>
+            <a href="#contact" class="m-link"><span>07</span>Contact</a>
             <div class="m-actions">
-                <a href="https://drive.google.com/file/d/1jzXQ1ZIk9eeE_49qpODpXSQJCmjKhBrT/view?usp=sharing"
+                <a href="downloads/Sebastian-Muchui-Resume.pdf"
                     target="_blank" class="btn btn-primary"><i class="fas fa-download"></i> Resume</a>
                 <a href="https://github.com/sponsors/astianmuchui" target="_blank" class="btn btn-ghost">
                     <i class="fas fa-heart" style="color:#ec4899"></i> Sponsor</a>
@@ -73,339 +173,223 @@
 
         <main>
             <!-- Hero -->
-            <section class="hero">
-                <div class="hero-bg" aria-hidden="true">
-                    <div class="orb orb-1"></div>
-                    <div class="orb orb-2"></div>
-                    <div class="orb orb-3"></div>
-                    <div class="beam" style="left:12%; --d:7s; --delay:1s"></div>
-                    <div class="beam" style="left:31%; --d:9s; --delay:3s"></div>
-                    <div class="beam" style="left:68%; --d:6s; --delay:0s"></div>
-                    <div class="beam" style="left:88%; --d:8s; --delay:4s"></div>
-                    <div class="hero-grid"></div>
-                </div>
-
+            <section id="top" class="hero" data-shape="sphere" data-label="Index" data-idx="00">
                 <div class="container hero-inner">
-                    <div>
-                        <span class="pill fade-up" style="--delay:.1s">
-                            <span class="tag"><span class="dot"></span>NOW</span>
-                            <span><b>Lead Software Engineer</b> at CHAJI</span>
-                        </span>
-
-                        <h1 data-split data-base="250">
-                            <span class="grad-text">Sebastian</span><br>
-                            <span class="shine-text">Muchui</span><span class="accent-dot">.</span>
-                        </h1>
-
-                        <p class="hero-sub fade-up" style="--delay:.9s">
-                            I build <span id="typer" class="typer"
-                                data-words='["IoT platforms.","Go backends.","OCPP systems.","telemetry pipelines.","embedded firmware."]'></span><br>
-                            Software, hardware and the wires in between. BSc. Control &amp; Instrumentation, JKUAT.
+                    <div class="hero-out">
+                        <p class="hero-pill" data-in>
+                            <span class="pill-ic"><i class="fas fa-microchip"></i></span>
+                            Software Engineer <span class="sep">✦</span> Nairobi, KE
                         </p>
+                    </div>
 
-                        <div class="hero-ctas fade-up" style="--delay:1.05s">
+                    <h1 class="hero-name" id="hero-name">
+                        <span class="line grad-text">Sebastian</span>
+                        <span class="line"><span class="shine-text">Muchui</span><span class="accent-dot">.</span></span>
+                    </h1>
+
+                    <div class="hero-out">
+                        <p class="hero-sub" data-in>
+                            I build <span id="typer" class="typer"
+                                data-words='["IoT platforms.","Go backends.","OCPP systems.","telemetry pipelines.","embedded firmware."]'>IoT platforms.</span><br>
+                            Software, hardware and the wires in between.
+                        </p>
+                        <div class="hero-ctas" data-in>
                             <a href="https://calendly.com/astianmuchui" target="_blank" class="btn btn-primary"
                                 data-magnetic><i class="fas fa-calendar"></i> Schedule a call</a>
                             <a href="#projects" class="btn btn-ghost" data-magnetic>View projects <i
                                     class="fas fa-arrow-right arrow"></i></a>
                         </div>
+                    </div>
+                </div>
 
-                        <div class="socials fade-up" style="--delay:1.2s">
+                <div class="term-out">
+                    <div class="term-wrap">
+                        <div class="term-bob">
+                            <div class="term" data-tilt="12">
+                                <div class="term-bar"><i></i><i></i><i></i></div>
+                                <div class="term-body" id="term"><span class="p">$ </span><span class="w">whoami</span>
+sebastian
+<span class="p">$ </span><span class="w">kubectl get pods -n iot</span>
+ingest-7f9c   Running
+<span class="p">$ </span><span class="w">go run ./cmd/ingest</span>
+<span class="ok">✓ </span>mqtt broker connected</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-bottom hero-out">
+                    <div class="container hero-bottom-inner">
+                        <div class="socials" data-in>
                             <a href="https://github.com/astianmuchui" target="_blank" class="social" aria-label="GitHub"><i class="fab fa-github"></i></a>
                             <a href="https://linkedin.com/in/astianmuchui" target="_blank" class="social" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                             <a href="https://x.com/astianmuchui" target="_blank" class="social" aria-label="X"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
                             <a href="https://medium.com/@astianmuchui" target="_blank" class="social" aria-label="Medium"><i class="fab fa-medium"></i></a>
                             <a href="mailto:astianmuchui@gmail.com" class="social" aria-label="Email"><i class="far fa-envelope"></i></a>
                         </div>
-                    </div>
-
-                    <div class="hero-visual fade-up" style="--delay:.5s">
-                        <div class="portrait photo" data-tilt="8">
-                            <div class="scanline"></div>
-                            <img src="./img/web/516a1599.jpg" alt="Sebastian Muchui soldering a circuit">
-                            <div class="portrait-meta"><b>Sebastian Muchui</b>Nairobi, KE · UTC+3</div>
-                        </div>
-                        <div class="float-card chip-card">
-                            <span class="ic"><i class="fas fa-microchip"></i></span>
-                            <span><small>Focus</small><strong>Software × Hardware</strong></span>
-                        </div>
-                        <div class="float-card term">
-                            <div class="term-bar"><i></i><i></i><i></i></div>
-                            <div class="term-body" id="term"></div>
-                        </div>
+                        <div class="scroll-cue" data-in><span class="mouse"></span>scroll to explore</div>
                     </div>
                 </div>
-
-                <div class="scroll-hint" aria-hidden="true"><span class="mouse"></span>scroll</div>
             </section>
 
-            <!-- Stats -->
-            <div class="container">
-                <div class="stats reveal">
-                    <div class="stat"><div class="num"><span data-count="5">0</span><sup>+</sup></div><p>Years building</p></div>
-                    <div class="stat"><div class="num"><span data-count="30">0</span><sup>+</sup></div><p>Projects shipped</p></div>
-                    <div class="stat"><div class="num"><span data-count="8">0</span><sup>+</sup></div><p>Languages</p></div>
-                    <div class="stat"><div class="num"><span data-count="100">0</span><sup>+</sup></div><p>Devs onboarded</p></div>
-                </div>
-            </div>
-
-            <!-- Marquee -->
-            <div class="marquee" aria-hidden="true">
-                <div class="marquee-track">
-                    <span class="marquee-item"><i class="fas fa-code"></i>Go</span>
-                    <span class="marquee-item"><i class="fab fa-rust"></i>Rust</span>
-                    <span class="marquee-item"><i class="fab fa-js"></i>TypeScript</span>
-                    <span class="marquee-item"><i class="fas fa-broadcast-tower"></i>MQTT</span>
-                    <span class="marquee-item"><i class="fab fa-linux"></i>Linux</span>
-                    <span class="marquee-item"><i class="fab fa-docker"></i>Docker</span>
-                    <span class="marquee-item"><i class="fas fa-microchip"></i>ESP32</span>
-                    <span class="marquee-item"><i class="fas fa-bolt"></i>OCPP / OCPI</span>
-                    <span class="marquee-item"><i class="fab fa-python"></i>Python</span>
-                    <span class="marquee-item"><i class="fas fa-database"></i>Redis</span>
-                    <span class="marquee-item"><i class="fas fa-stream"></i>Kafka</span>
-                    <span class="marquee-item"><i class="fab fa-react"></i>React</span>
-                    <!-- duplicate for seamless loop -->
-                    <span class="marquee-item"><i class="fas fa-code"></i>Go</span>
-                    <span class="marquee-item"><i class="fab fa-rust"></i>Rust</span>
-                    <span class="marquee-item"><i class="fab fa-js"></i>TypeScript</span>
-                    <span class="marquee-item"><i class="fas fa-broadcast-tower"></i>MQTT</span>
-                    <span class="marquee-item"><i class="fab fa-linux"></i>Linux</span>
-                    <span class="marquee-item"><i class="fab fa-docker"></i>Docker</span>
-                    <span class="marquee-item"><i class="fas fa-microchip"></i>ESP32</span>
-                    <span class="marquee-item"><i class="fas fa-bolt"></i>OCPP / OCPI</span>
-                    <span class="marquee-item"><i class="fab fa-python"></i>Python</span>
-                    <span class="marquee-item"><i class="fas fa-database"></i>Redis</span>
-                    <span class="marquee-item"><i class="fas fa-stream"></i>Kafka</span>
-                    <span class="marquee-item"><i class="fab fa-react"></i>React</span>
-                </div>
-            </div>
-            <div class="marquee reverse" aria-hidden="true">
-                <div class="marquee-track">
-                    <span class="marquee-item"><i class="fas fa-memory"></i>FreeRTOS</span>
-                    <span class="marquee-item"><i class="fas fa-microchip"></i>STM32</span>
-                    <span class="marquee-item"><i class="fas fa-plug"></i>WebSockets</span>
-                    <span class="marquee-item"><i class="fab fa-github"></i>GitHub Actions</span>
-                    <span class="marquee-item"><i class="fab fa-gitlab"></i>GitLab CI</span>
-                    <span class="marquee-item"><i class="fab fa-node-js"></i>Node.js</span>
-                    <span class="marquee-item"><i class="fab fa-php"></i>PHP</span>
-                    <span class="marquee-item"><i class="fas fa-terminal"></i>C / C++</span>
-                    <span class="marquee-item"><i class="fab fa-python"></i>Django</span>
-                    <span class="marquee-item"><i class="fas fa-wave-square"></i>Circuit Design</span>
-                    <!-- duplicate for seamless loop -->
-                    <span class="marquee-item"><i class="fas fa-memory"></i>FreeRTOS</span>
-                    <span class="marquee-item"><i class="fas fa-microchip"></i>STM32</span>
-                    <span class="marquee-item"><i class="fas fa-plug"></i>WebSockets</span>
-                    <span class="marquee-item"><i class="fab fa-github"></i>GitHub Actions</span>
-                    <span class="marquee-item"><i class="fab fa-gitlab"></i>GitLab CI</span>
-                    <span class="marquee-item"><i class="fab fa-node-js"></i>Node.js</span>
-                    <span class="marquee-item"><i class="fab fa-php"></i>PHP</span>
-                    <span class="marquee-item"><i class="fas fa-terminal"></i>C / C++</span>
-                    <span class="marquee-item"><i class="fab fa-python"></i>Django</span>
-                    <span class="marquee-item"><i class="fas fa-wave-square"></i>Circuit Design</span>
-                </div>
+            <!-- Tapes -->
+            <div class="tapes" aria-hidden="true">
+                <div class="tape tape-b"><div class="tape-track">
+                    <span>MQTT</span><span>OCPP</span><span>Telemetry</span><span>FreeRTOS</span><span>STM32</span><span>Kafka</span><span>WebSockets</span><span>Redis</span>
+                    <span>MQTT</span><span>OCPP</span><span>Telemetry</span><span>FreeRTOS</span><span>STM32</span><span>Kafka</span><span>WebSockets</span><span>Redis</span>
+                </div></div>
+                <div class="tape tape-a"><div class="tape-track">
+                    <span>Go</span><span>Rust</span><span>Kubernetes</span><span>TypeScript</span><span>Docker</span><span>Linux</span><span>ESP32</span><span>Python</span><span>React</span>
+                    <span>Go</span><span>Rust</span><span>Kubernetes</span><span>TypeScript</span><span>Docker</span><span>Linux</span><span>ESP32</span><span>Python</span><span>React</span>
+                </div></div>
             </div>
 
             <!-- About -->
-            <section id="about" class="section">
+            <section id="about" class="section" data-shape="helix" data-label="About" data-idx="01">
+                <span class="sec-num" data-speed="0.5" aria-hidden="true">01</span>
                 <div class="container about-grid">
-                    <div class="about-photo photo reveal from-left" data-tilt="5">
-                        <img src="./img/web/avatar.jpg" alt="Portrait of Sebastian Muchui">
-                        <div class="tagline"><span>~/sebastian</span><span style="color:var(--green)">● available</span></div>
-                    </div>
-
-                    <div class="about-text">
-                        <span class="eyebrow">01 / about</span>
-                        <h2 class="h2" data-words>A problem solver in software <span class="grad-text">&amp; hardware.</span></h2>
-                        <div class="reveal" style="--d:.2s; margin-top:28px">
-                            <p>I'm a self-taught engineer with a broad range of experience, which lets me take on
-                                different kinds of problems in different settings. I hold a <strong>BSc. in Control and
-                                Instrumentation</strong> from JKUAT and I'm a certified software engineer through the
+                    <div class="about-copy">
+                        <p class="cmd"><span class="prompt">➜</span><span class="path">~</span><span data-type>cat about.md</span></p>
+                        <h2 class="h2" data-flip>A problem solver in software <span class="grad-text">&amp; hardware.</span></h2>
+                        <div class="bio" data-scrub-words>
+                            <p>I'm a full stack software engineer based in Nairobi, with a heavy focus on
+                                <strong>backend development and system design</strong>. I hold a <strong>BSc. in Control
+                                and Instrumentation</strong> from JKUAT and I'm a certified software engineer through the
                                 <strong>ALX</strong> programme.</p>
-                            <p>As a software engineer I focus on the solution and whether it will last. My work spans
-                                web applications, <strong>distributed systems, IoT and robotics</strong>. I've spent a
-                                lot of time on Linux systems, multi-protocol communication platforms and backend services
-                                in Go, Node.js and Python.</p>
+                            <p>I focus on the solution and whether it will last. My work spans web applications,
+                                <strong>distributed systems, IoT and robotics</strong>, with a lot of time spent on
+                                Linux, multi-protocol communication platforms and backend services in Go, Node.js and
+                                Python.</p>
                             <p>I want to keep learning as much as I can and put it to work on real problems.</p>
                         </div>
-                        <pre class="code-block card reveal" style="--d:.35s"><span class="c">// engineer.go</span>
-<span class="k">type</span> <span class="t">Engineer</span> <span class="k">struct</span> {
-    Name     <span class="n">string</span>
-    Focus    []<span class="n">string</span>
-}
-
-<span class="k">var</span> me = <span class="t">Engineer</span>{
-    Name:  <span class="s">"Sebastian Muchui"</span>,
-    Focus: []<span class="n">string</span>{<span class="s">"backend"</span>, <span class="s">"iot"</span>, <span class="s">"embedded"</span>},
-}</pre>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Featured -->
-            <section id="featured" class="section glow-top">
-                <div class="container">
-                    <div class="section-head">
-                        <span class="eyebrow">02 / featured</span>
-                        <h2 class="h2" data-words>Featured moment.</h2>
-                        <p class="lead reveal" style="--d:.2s">Selected for a feature interview after completing the JKUAT
-                            Inspire Youth in STEM bootcamp, an intensive 8-week programme covering web development,
-                            Python, JavaScript and robotics.</p>
-                    </div>
-
-                    <div class="featured-grid">
-                        <div class="card video-frame reveal zoom">
-                            <div class="ratio">
-                                <iframe src="https://www.youtube.com/embed/zw7RzUNamV8"
-                                    title="JKUAT Inspire Youth in STEM - Sebastian Muchui" loading="lazy"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                            </div>
+                        <div class="stats">
+                            <div class="stat"><div class="num"><span data-count="5">5</span><sup>+</sup></div><p data-scramble>Years building</p></div>
+                            <div class="stat"><div class="num"><span data-count="30">30</span><sup>+</sup></div><p data-scramble>Projects shipped</p></div>
+                            <div class="stat"><div class="num"><span data-count="8">8</span><sup>+</sup></div><p data-scramble>Languages</p></div>
                         </div>
-                        <div class="card feat-info reveal from-right" style="--d:.15s">
-                            <div>
-                                <div class="meta" style="margin-bottom:14px"><span>FEB 2025</span><span>NAIROBI, KE</span></div>
-                                <h3>JKUAT Inspire Youth in STEM</h3>
-                                <p style="margin-top:12px">After the bootcamp, I was selected with fellow participants for a
-                                    media feature interview. The programme offered hands-on training in web development,
-                                    Python, JavaScript and robotics competitions, ending with a completion certificate.</p>
-                            </div>
-                            <div>
-                                <div class="meta" style="margin-bottom:12px">ALSO FEATURED ON</div>
-                                <div class="links-row">
-                                    <a href="https://www.linkedin.com/posts/jkuat_meet-the-bright-minds-shaping-tomorrow-having-activity-7292880204224462849-0V9l"
-                                        target="_blank" class="btn btn-ghost btn-sm"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                                    <a href="https://www.facebook.com/DiscoverJKUAT/videos/jkuat-inspire-youth-in-stem/1339094173693159/"
-                                        target="_blank" class="btn btn-ghost btn-sm"><i class="fab fa-facebook"></i> Facebook</a>
-                                    <a href="https://www.instagram.com/discoverjkuat/reel/DFsN4OEvG4m/" target="_blank"
-                                        class="btn btn-ghost btn-sm"><i class="fab fa-instagram"></i> Instagram</a>
-                                </div>
-                            </div>
+                    </div>
+
+                    <div class="about-visual">
+                        <div class="about-photo photo" data-cursor="HOVER">
+                            <img src="img/web/avatar.webp" alt="Portrait of Sebastian Muchui" width="900" height="900" loading="lazy" decoding="async">
+                            <div class="tagline"><span>~/sebastian</span><span>IMG_0001.JPG</span></div>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- Experience -->
-            <section id="experience" class="section glow-top">
+            <section id="experience" class="section" data-shape="cube" data-label="Experience" data-idx="02">
+                <span class="sec-num" data-speed="0.5" aria-hidden="true">02</span>
                 <div class="container">
                     <div class="section-head">
-                        <span class="eyebrow">03 / experience</span>
-                        <h2 class="h2" data-words>Where I've worked <span class="grad-text">&amp; studied.</span></h2>
+                        <p class="cmd"><span class="prompt">➜</span><span class="path">~</span><span data-type>git log --career</span></p>
+                        <h2 class="h2" data-flip>Where I've worked <span class="grad-text">&amp; studied.</span></h2>
                     </div>
 
-                    <div class="exp-layout">
-                        <div class="timeline">
-                            <div class="timeline-line"><span></span></div>
-
-                            <div class="tl-item">
-                                <span class="tl-node"></span>
-                                <div class="card tl-card reveal">
-                                    <div class="tl-top">
-                                        <h4>Lead Software Engineer</h4>
-                                        <span class="badge live"><span class="dot"></span>Current</span>
-                                    </div>
-                                    <p class="tl-org">CHAJI Services Limited</p>
-                                    <p class="tl-date">MAR 2026 — PRESENT · NAIROBI</p>
-                                    <ul>
-                                        <li>Leading development of Battery Intelligence Platforms and multi-protocol services.</li>
-                                        <li>Maintaining production and staging environments with CI/CD pipelines.</li>
-                                        <li>Running code reviews and overseeing new software features with hardware integration.</li>
-                                        <li>Making key architectural decisions across product layers with the product team.</li>
-                                    </ul>
+                    <div class="xp-stack">
+                        <article class="card xp-card" style="--i:0">
+                            <span class="xp-ghost" aria-hidden="true">01</span>
+                            <div class="xp-top"><span class="xp-idx">// 01</span><span class="badge live"><span class="dot"></span>Current</span></div>
+                            <div class="xp-body">
+                                <div class="xp-main">
+                                    <h3>Software Engineer</h3>
+                                    <p class="xp-org">CHAJI Services Limited</p>
+                                    <p class="xp-date" data-scramble>MAY 2025 — PRESENT · NAIROBI</p>
                                 </div>
+                                <ul>
+                                    <li>Lead design and development of CHAJI's Charging Station Management System (CSMS), Battery Intelligence and Fleet Management systems in Go.</li>
+                                    <li>Build high-throughput data ingesters over WebSocket and MQTT.</li>
+                                    <li>Design wallet-based billing on the Daraja (M-Pesa) API, and SDKs for USSD, SMS and Daraja used across our APIs.</li>
+                                    <li>Develop a multi-channel notifications and alerts system.</li>
+                                    <li>Own system design decisions and optimise based on observability metrics.</li>
+                                    <li>Maintain a private fork of the open-source ocpp-go package, extending it with additional functionality.</li>
+                                    <li>Build CI/CD pipelines, write unit tests and work with hardware and product teams on end-to-end solutions.</li>
+                                </ul>
                             </div>
+                        </article>
 
-                            <div class="tl-item">
-                                <span class="tl-node"></span>
-                                <div class="card tl-card reveal">
-                                    <div class="tl-top"><h4>IoT Engineer</h4></div>
-                                    <p class="tl-org">CHAJI Services Limited</p>
-                                    <p class="tl-date">MAY 2025 — MAR 2026 · NAIROBI</p>
-                                    <ul>
-                                        <li>Built OCPP-compliant systems for EVSE and battery telemetry ingestion backends.</li>
-                                        <li>Architected IoT cloud infrastructure with real-time alerting and user dashboards.</li>
-                                        <li>Developed Battery Intelligence APIs, Payment APIs and REST services.</li>
-                                        <li>Implemented CI/CD pipelines, cloud monitoring and hardware integration.</li>
-                                    </ul>
+                        <article class="card xp-card" style="--i:1">
+                            <span class="xp-ghost" aria-hidden="true">02</span>
+                            <div class="xp-top"><span class="xp-idx">// 02</span></div>
+                            <div class="xp-body">
+                                <div class="xp-main">
+                                    <h3>Software Engineer</h3>
+                                    <p class="xp-org">Disheey</p>
+                                    <p class="xp-date" data-scramble>MAY 2024 — NOV 2024 · NAIROBI</p>
                                 </div>
+                                <ul>
+                                    <li>Translated Figma designs into responsive, high-performance frontends with modern web technologies.</li>
+                                    <li>Integrated REST APIs to enable communication between the frontend and backend services.</li>
+                                </ul>
                             </div>
+                        </article>
 
-                            <div class="tl-item">
-                                <span class="tl-node"></span>
-                                <div class="card tl-card reveal">
-                                    <div class="tl-top"><h4>Software Engineer</h4></div>
-                                    <p class="tl-org">Disheey</p>
-                                    <p class="tl-date">MAY 2024 — NOV 2024 · NAIROBI</p>
-                                    <ul>
-                                        <li>Translated Figma designs into responsive frontends.</li>
-                                        <li>Integrated REST APIs for frontend/backend communication.</li>
-                                    </ul>
+                        <article class="card xp-card" style="--i:2">
+                            <span class="xp-ghost" aria-hidden="true">03</span>
+                            <div class="xp-top"><span class="xp-idx">// 03</span><span class="badge gold"><i class="fas fa-trophy"></i>MVP Award</span></div>
+                            <div class="xp-body">
+                                <div class="xp-main">
+                                    <h3>Davis and Shirtliff Hackathon</h3>
+                                    <p class="xp-org">IoT Notifications, Alarms and Triggers System</p>
+                                    <p class="xp-date" data-scramble>DAVIS AND SHIRTLIFF · NAIROBI</p>
                                 </div>
-                            </div>
-
-                            <div class="tl-item">
-                                <span class="tl-node"></span>
-                                <div class="card tl-card reveal">
-                                    <div class="tl-top">
-                                        <h4>D&amp;S Hackathon</h4>
-                                        <span class="badge gold"><i class="fas fa-trophy"></i>MVP Award</span>
-                                    </div>
-                                    <p class="tl-org">IoT Notifications, Alarms &amp; Triggers</p>
-                                    <p class="tl-date">DAVIS &amp; SHIRTLIFF · NAIROBI</p>
+                                <div>
                                     <ul>
-                                        <li>Led a team building a distributed notification system for 1,000+ daily IoT alerts.</li>
-                                        <li>Recognised with the MVP Award for innovation in IoT monitoring.</li>
+                                        <li>Led a team building a distributed notification system for real-time alerts and alarms from IoT devices across the Davis and Shirtliff ecosystem, handling 1,000+ alerts daily.</li>
+                                        <li>Won the MVP Award at the Davis and Shirtliff Hackathon for innovation and impact in IoT monitoring.</li>
                                     </ul>
                                     <a href="https://www.linkedin.com/posts/clive-kamaliki-801b09184_iot-idayliff-reporting-activity-7240029152437764097-sdJA/"
                                         target="_blank" class="text-link"><i class="fab fa-linkedin"></i> View on LinkedIn <i
                                             class="fas fa-arrow-right" style="font-size:10px"></i></a>
                                 </div>
                             </div>
+                        </article>
+                    </div>
+
+                    <div class="xp-extra">
+                        <div class="card side-card">
+                            <h3><i class="fas fa-users"></i> Leadership</h3>
+                            <div class="mini">
+                                <h4>Co-Lead</h4>
+                                <p>Google Developer Groups JKUAT</p>
+                                <span class="tl-date">SEP 2024 — SEP 2025 · JUJA</span>
+                                <p style="margin-top:8px">Coordinated core team selection, managed club events and led
+                                    outreach that grew membership by 100+ sign-ups. Built partnerships with the JKUAT
+                                    Society of Engineering Students and hosted sessions on Web Dev, DevOps and IoT.</p>
+                            </div>
+                            <div class="mini">
+                                <h4>IoT &amp; Robotics Lead</h4>
+                                <p>Google Developer Student Clubs JKUAT</p>
+                                <span class="tl-date">SEP 2023 — SEP 2024 · JUJA</span>
+                                <p style="margin-top:8px">Ran hands-on workshops, training 20 mentees, and onboarded new
+                                    GDSC community members.</p>
+                            </div>
                         </div>
 
-                        <div class="side-col">
-                            <div class="card side-card reveal from-right">
-                                <h3><i class="fas fa-users"></i> Leadership</h3>
-                                <div class="mini">
-                                    <h4>Co-Lead</h4>
-                                    <p>Google Developer Groups JKUAT</p>
-                                    <span class="tl-date">SEP 2024 — SEP 2025 · JUJA</span>
-                                    <p style="margin-top:8px">Coordinated core team selection, ran club events, grew
-                                        membership by 100+ sign-ups and hosted sessions on Web Dev, DevOps and IoT.</p>
-                                </div>
-                                <div class="mini">
-                                    <h4>IoT &amp; Robotics Lead</h4>
-                                    <p>Google Developer Student Clubs JKUAT</p>
-                                    <span class="tl-date">SEP 2023 — SEP 2024 · JUJA</span>
-                                    <p style="margin-top:8px">Ran hands-on workshops, training 20 mentees, and onboarded new
-                                        GDSC community members.</p>
-                                </div>
+                        <div class="card side-card">
+                            <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                            <div class="mini">
+                                <h4>BSc. Control &amp; Instrumentation <span class="badge live" style="margin-left:6px">Graduated</span></h4>
+                                <p>JKUAT</p>
+                                <span class="tl-date">SEP 2022 — AUG 2026 · JUJA</span>
                             </div>
-
-                            <div class="card side-card reveal from-right" style="--d:.12s">
-                                <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-                                <div class="mini">
-                                    <h4>BSc. Control &amp; Instrumentation <span class="badge live" style="margin-left:6px">Graduated</span></h4>
-                                    <p>JKUAT</p>
-                                    <span class="tl-date">SEP 2022 — AUG 2026 · JUJA</span>
-                                </div>
-                                <div class="mini">
-                                    <h4>Software Engineering</h4>
-                                    <p>ALX Holberton · 12-month programme, back-end specialisation</p>
-                                    <span class="tl-date">NOV 2022 — JUN 2024 · NAIROBI</span>
-                                    <a class="cert" href="https://savanna.alxafrica.com/certificates/BNHGzyRX65" target="_blank">
-                                        <span class="photo"><img src="./img/web/alx-certificate.jpg" alt="ALX certificate"></span>
-                                        <span>
-                                            <span style="display:block;font-size:13px;font-weight:500">Certificate of Completion</span>
-                                            <span class="tl-date">JUN 7, 2024 · VERIFY ↗</span>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="mini">
-                                    <h4>Inspire Youth in STEM Bootcamp</h4>
-                                    <p>JKUAT</p>
-                                    <span class="tl-date">MAY 2022 — JUL 2022</span>
-                                </div>
+                            <div class="mini">
+                                <h4>Software Engineering</h4>
+                                <p>ALX Holberton · 12-month programme, back-end specialisation</p>
+                                <span class="tl-date">NOV 2022 — JUN 2024 · NAIROBI</span>
+                                <a class="cert" href="https://savanna.alxafrica.com/certificates/BNHGzyRX65" target="_blank">
+                                    <span class="photo"><img src="img/web/alx-certificate.webp" alt="ALX certificate" width="300" height="169" loading="lazy" decoding="async"></span>
+                                    <span>
+                                        <span style="display:block;font-size:13px;font-weight:500">Certificate of Completion</span>
+                                        <span class="tl-date">JUN 7, 2024 · VERIFY ↗</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="mini">
+                                <h4>Inspire Youth in STEM Bootcamp</h4>
+                                <p>JKUAT</p>
+                                <span class="tl-date">MAY 2022 — JUL 2022</span>
                             </div>
                         </div>
                     </div>
@@ -413,39 +397,17 @@
             </section>
 
             <!-- Stack -->
-            <section id="stack" class="section glow-top">
-                <div class="container">
-                    <div class="section-head center">
-                        <span class="eyebrow">04 / stack</span>
-                        <h2 class="h2" data-words>The tools I <span class="grad-text">ship with.</span></h2>
-                        <p class="lead reveal" style="--d:.2s">From register-level firmware to cloud ingestion pipelines.</p>
-                    </div>
+            <section id="stack" class="section stack" data-shape="lattice" data-label="Stack" data-idx="03">
+                <div class="container stack-head">
+                    <p class="cmd"><span class="prompt">➜</span><span class="path">~</span><span data-type>kubectl get skills -A</span></p>
+                    <h2 class="h2" data-flip>The tools I <span class="grad-text">ship with.</span></h2>
+                    <p class="lead" data-type>From register-level firmware to cloud ingestion pipelines.</p>
+                </div>
 
-                    <div class="bento" data-stagger="0.08">
-                        <div class="card skill-card wide reveal">
-                            <div class="skill-icon"><i class="fas fa-microchip"></i></div>
-                            <h3>Hardware &amp; IoT</h3>
-                            <p>Sensors to cloud: firmware, protocols and the distributed systems that take in the data.</p>
-                            <div class="signal" aria-hidden="true">
-                                <svg viewBox="0 0 600 90" preserveAspectRatio="none">
-                                    <defs>
-                                        <linearGradient id="sig-grad" x1="0" x2="1">
-                                            <stop offset="0" stop-color="#e0234e" stop-opacity="0" />
-                                            <stop offset=".5" stop-color="#ff5c7a" />
-                                            <stop offset="1" stop-color="#fff" stop-opacity=".3" />
-                                        </linearGradient>
-                                    </defs>
-                                    <path d="M0 45 H80 L95 45 L105 15 L118 78 L130 30 L140 45 H220 L232 45 L242 10 L256 82 L268 45 H360 L372 45 L382 20 L395 72 L406 45 H500 L512 45 L522 25 L534 68 L545 45 H600" />
-                                </svg>
-                            </div>
-                            <div class="chips">
-                                <span class="chip">Distributed Systems</span><span class="chip">MQTT</span>
-                                <span class="chip">OCPP</span><span class="chip">ESP32</span><span class="chip">STM32</span>
-                                <span class="chip">FreeRTOS</span><span class="chip">Arduino</span><span class="chip">Circuit Design</span>
-                            </div>
-                        </div>
-                        <div class="card skill-card reveal">
-                            <div class="skill-icon"><i class="fas fa-code"></i></div>
+                <div class="ring-stage" data-cursor="SCROLL">
+                    <div class="ring" id="ring">
+                        <div class="card ring-card" data-name="Languages">
+                            <div class="rc-top"><span class="skill-icon"><i class="fas fa-code"></i></span><span class="rc-idx">01</span></div>
                             <h3>Languages</h3>
                             <p>Systems to scripting.</p>
                             <div class="chips">
@@ -454,41 +416,69 @@
                                 <span class="chip">C</span><span class="chip">C++</span>
                             </div>
                         </div>
-                        <div class="card skill-card half reveal">
-                            <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+                        <div class="card ring-card" data-name="Infrastructure">
+                            <div class="rc-top"><span class="skill-icon"><i class="fas fa-dharmachakra"></i></span><span class="rc-idx">02</span></div>
+                            <h3>Infrastructure</h3>
+                            <p>Containers, clusters and pipelines.</p>
+                            <div class="chips">
+                                <span class="chip">Kubernetes</span><span class="chip">Docker</span><span class="chip">Linux</span>
+                                <span class="chip">Bash</span><span class="chip">GitHub Actions</span><span class="chip">GitLab CI</span><span class="chip">Git</span>
+                            </div>
+                        </div>
+                        <div class="card ring-card" data-name="IoT & Protocols">
+                            <div class="rc-top"><span class="skill-icon"><i class="fas fa-broadcast-tower"></i></span><span class="rc-idx">03</span></div>
+                            <h3>IoT &amp; Protocols</h3>
+                            <p>Devices talking to the cloud.</p>
+                            <div class="chips">
+                                <span class="chip">MQTT</span><span class="chip">OCPP</span><span class="chip">WebSockets</span>
+                                <span class="chip">Distributed Systems</span><span class="chip">Telemetry</span>
+                            </div>
+                        </div>
+                        <div class="card ring-card" data-name="Embedded">
+                            <div class="rc-top"><span class="skill-icon"><i class="fas fa-microchip"></i></span><span class="rc-idx">04</span></div>
+                            <h3>Embedded</h3>
+                            <p>Firmware close to the metal.</p>
+                            <div class="chips">
+                                <span class="chip">C/C++ Firmware</span><span class="chip">ESP32</span><span class="chip">STM32</span><span class="chip">FreeRTOS</span>
+                                <span class="chip">Arduino</span><span class="chip">Circuit Design</span>
+                            </div>
+                        </div>
+                        <div class="card ring-card" data-name="Data & Streaming">
+                            <div class="rc-top"><span class="skill-icon"><i class="fas fa-database"></i></span><span class="rc-idx">05</span></div>
+                            <h3>Data &amp; Streaming</h3>
+                            <p>Where the telemetry lands.</p>
+                            <div class="chips">
+                                <span class="chip">Kafka</span><span class="chip">Redis</span><span class="chip">SQL</span>
+                                <span class="chip">NoSQL</span>
+                            </div>
+                        </div>
+                        <div class="card ring-card" data-name="Frameworks & Web">
+                            <div class="rc-top"><span class="skill-icon"><i class="fas fa-layer-group"></i></span><span class="rc-idx">06</span></div>
                             <h3>Frameworks &amp; Web</h3>
                             <p>Interfaces and APIs that hold up.</p>
                             <div class="chips">
                                 <span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Node.js</span>
-                                <span class="chip">Django</span><span class="chip">Laravel</span><span class="chip">HTML / CSS</span>
-                                <span class="chip">SCSS</span>
-                            </div>
-                        </div>
-                        <div class="card skill-card half reveal">
-                            <div class="skill-icon"><i class="fas fa-server"></i></div>
-                            <h3>Infrastructure</h3>
-                            <p>Pipelines, containers and data stores.</p>
-                            <div class="chips">
-                                <span class="chip">Linux</span><span class="chip">Docker</span><span class="chip">Git</span>
-                                <span class="chip">GitHub Actions</span><span class="chip">GitLab CI</span>
-                                <span class="chip">Redis</span><span class="chip">Kafka</span><span class="chip">SQL / NoSQL</span>
+                                <span class="chip">Django</span><span class="chip">Laravel</span><span class="chip">SCSS</span>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="ring-readout"><b id="ring-idx">01</b><span>/ 06 —</span><b id="ring-name">Languages</b></div>
             </section>
 
             <!-- Projects -->
-            <section id="projects" class="section glow-top">
-                <div class="container">
-                    <div class="section-head">
-                        <span class="eyebrow">05 / projects</span>
-                        <h2 class="h2" data-words>Things I've <span class="grad-text">built.</span></h2>
-                        <p class="lead reveal" style="--d:.2s">Platforms, packages, robots and everything in between.</p>
+            <section id="projects" class="projects" data-shape="torus" data-label="Projects" data-idx="04">
+                <div class="proj-ghost" aria-hidden="true">BUILT · SHIPPED · DEPLOYED · BUILT · SHIPPED ·</div>
+                <div class="proj-track" id="proj-track">
+                    <div class="proj-slot proj-intro">
+                        <p class="cmd"><span class="prompt">➜</span><span class="path">~</span><span data-type>ls -la ~/projects</span></p>
+                        <h2 class="h2" data-flip>Things I've <span class="grad-text">built.</span></h2>
+                        <p class="lead" data-type>Platforms, packages, robots and everything in between.</p>
+                        <p class="proj-hint">keep scrolling <span>→</span></p>
                     </div>
 
-                    <div class="proj-grid" data-stagger="0.07">
-                        <article class="card proj feature reveal">
+                    <div class="proj-slot wide">
+                        <article class="card proj feature">
                             <div class="feature-body">
                                 <div class="proj-head">
                                     <span class="badge live"><span class="dot"></span>Featured project</span>
@@ -499,7 +489,6 @@
                                 <h3>NexThings IoT Core</h3>
                                 <p>A modular, multi-protocol IoT platform built for scale, with real-time message
                                     streaming, customisable analytics and flexible alerting.</p>
-
                                 <div class="arch" aria-hidden="true">
                                     <div class="arch-row">
                                         <div class="node">devices<small>esp32 · bms</small></div>
@@ -512,215 +501,280 @@
                                     </div>
                                     <div class="arch-log" id="arch-log"></div>
                                 </div>
-
                                 <div class="chips">
                                     <span class="chip">Go</span><span class="chip">MQTT</span><span class="chip">WebSockets</span>
                                     <span class="chip">Kafka</span><span class="chip">Docker</span>
                                 </div>
                             </div>
                         </article>
+                    </div>
 
-                        <article class="card proj reveal" data-tilt="4">
+                    <div class="proj-slot wide">
+                        <article class="card proj split">
+                            <div class="split-body">
+                                <div class="proj-head">
+                                    <span class="badge">Final year project · JKUAT</span>
+                                    <span class="proj-index">/02</span>
+                                </div>
+                                <h3>Semi-Autonomous Warehouse Robot</h3>
+                                <p>A wheeled robot with a four-joint manipulator arm for warehouse operations and
+                                    environmental monitoring, built in a team of three. ESP32 firmware drives the base and
+                                    arm, reads sensors and detects bumps and free-falls from an IMU, streaming telemetry
+                                    over MQTT to a Go (Fiber) web app backed by PostgreSQL and ScyllaDB.</p>
+                                <div class="links-row">
+                                    <a href="https://github.com/astianmuchui/warehouse-robot" target="_blank" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> Firmware</a>
+                                    <a href="https://github.com/astianmuchui/warehouse-robot-software" target="_blank" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> Web app</a>
+                                </div>
+                                <div class="chips"><span class="chip">C/C++</span><span class="chip">ESP32</span><span class="chip">FreeRTOS</span><span class="chip">MQTT</span><span class="chip">Go</span><span class="chip">ScyllaDB</span><span class="chip">Docker</span></div>
+                            </div>
+                            <div class="split-photo photo" data-cursor="HOVER"><img src="img/web/robot-assembly.webp" alt="Warehouse robot with its manipulator arm" width="338" height="600" loading="lazy" decoding="async"></div>
+                        </article>
+                    </div>
+
+                    <div class="proj-slot">
+                        <article class="card proj" data-tilt="6">
                             <div class="proj-head">
-                                <span class="proj-index">/02</span>
+                                <span class="proj-index">/03</span>
                                 <div class="proj-actions">
                                     <a href="https://github.com/astianmuchui/daraja-go" target="_blank" class="icon-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
                                     <a href="https://pkg.go.dev/github.com/astianmuchui/daraja-go" target="_blank" class="icon-btn" aria-label="pkg.go.dev"><i class="fas fa-external-link-alt"></i></a>
                                 </div>
                             </div>
+                            <div class="proj-big" aria-hidden="true">03</div>
                             <h3>Daraja-Go</h3>
-                            <p>A minimal Daraja API wrapper for Go, published on pkg.go.dev for easy M-Pesa payment integration.</p>
-                            <div class="chips"><span class="chip">Go</span><span class="chip">M-Pesa API</span><span class="chip">Package</span></div>
+                            <p>A dependency-free Go library for the Safaricom Daraja API: STK push, B2C, B2B, reversals, balance and transaction queries, with OAuth2 tokens handled automatically.</p>
+                            <div class="chips"><span class="chip">Go</span><span class="chip">M-Pesa</span><span class="chip">pkg.go.dev</span></div>
                         </article>
+                    </div>
 
-                        <article class="card proj reveal" data-tilt="4">
+                    <div class="proj-slot">
+                        <article class="card proj" data-tilt="6">
                             <div class="proj-head">
-                                <span class="proj-index">/03</span>
+                                <span class="proj-index">/04</span>
+                                <div class="proj-actions">
+                                    <a href="https://github.com/astianmuchui/at-ussd-gofiber" target="_blank" class="icon-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                    <a href="https://pkg.go.dev/github.com/astianmuchui/at-ussd-gofiber" target="_blank" class="icon-btn" aria-label="pkg.go.dev"><i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                            <div class="proj-big" aria-hidden="true">04</div>
+                            <h3>AT USSD for Fiber</h3>
+                            <p>A lightweight Go SDK for building Africa's Talking USSD apps on Fiber v3: parse sessions and callbacks, and build CON/END responses.</p>
+                            <div class="chips"><span class="chip">Go</span><span class="chip">Fiber</span><span class="chip">USSD</span></div>
+                        </article>
+                    </div>
+
+                    <div class="proj-slot">
+                        <article class="card proj" data-tilt="6">
+                            <div class="proj-head">
+                                <span class="proj-index">/05</span>
                                 <div class="proj-actions">
                                     <a href="https://github.com/astianmuchui/PixelSequel" target="_blank" class="icon-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
                                     <a href="https://astianmuchui.github.io/PixelSequel/home" target="_blank" class="icon-btn" aria-label="Docs"><i class="fas fa-external-link-alt"></i></a>
                                 </div>
                             </div>
+                            <div class="proj-big" aria-hidden="true">05</div>
                             <h3>PixelSequel ORM</h3>
-                            <p>A lightweight PHP ORM for MySQL databases. Published on Packagist with 20+ installs.</p>
+                            <p>A lightweight ORM on the PHP standard library that removes boilerplate SQL from vanilla PHP. Published on Packagist with 20+ installs.</p>
                             <div class="chips"><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">ORM</span></div>
                         </article>
+                    </div>
 
-                        <article class="card proj reveal" data-tilt="4">
+                    <div class="proj-slot">
+                        <article class="card proj" data-tilt="6">
                             <div class="proj-head">
-                                <span class="proj-index">/04</span>
+                                <span class="proj-index">/06</span>
                                 <div class="proj-actions">
                                     <a href="https://github.com/astianmuchui/url-shortener" target="_blank" class="icon-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
                                 </div>
                             </div>
+                            <div class="proj-big" aria-hidden="true">06</div>
                             <h3>Bitsy URL Shortener</h3>
                             <p>A fast URL shortener written in Go with clean short links.</p>
                             <div class="chips"><span class="chip">Go</span><span class="chip">Backend</span></div>
                         </article>
+                    </div>
 
-                        <article class="card proj reveal" data-tilt="4">
+                    <div class="proj-slot">
+                        <article class="card proj" data-tilt="6">
                             <div class="proj-head">
-                                <span class="proj-index">/05</span>
+                                <span class="proj-index">/07</span>
                                 <div class="proj-actions">
                                     <a href="https://www.kijarulydiahandcoadvocates.com/" target="_blank" class="icon-btn" aria-label="Website"><i class="fas fa-external-link-alt"></i></a>
                                 </div>
                             </div>
+                            <div class="proj-big" aria-hidden="true">07</div>
                             <h3>Kijaru Lydiah &amp; Co.</h3>
                             <p>Website for a law firm with a clean, authoritative design and full service information.</p>
                             <div class="chips"><span class="chip">Web Design</span><span class="chip">Frontend</span></div>
                         </article>
+                    </div>
 
-                        <article class="card proj reveal" data-tilt="4">
+                    <div class="proj-slot">
+                        <article class="card proj" data-tilt="6">
                             <div class="proj-head">
-                                <span class="proj-index">/06</span>
+                                <span class="proj-index">/08</span>
                                 <div class="proj-actions">
                                     <a href="https://maridadionline.com" target="_blank" class="icon-btn" aria-label="Website"><i class="fas fa-external-link-alt"></i></a>
                                 </div>
                             </div>
+                            <div class="proj-big" aria-hidden="true">08</div>
                             <h3>Maridadi Online</h3>
                             <p>E-commerce platform for aquarium products and ornamental fish, with multi-vendor support and payments.</p>
                             <div class="chips"><span class="chip">E-commerce</span><span class="chip">Full Stack</span></div>
                         </article>
+                    </div>
 
-                        <article class="card proj reveal" data-tilt="4">
+                    <div class="proj-slot">
+                        <article class="card proj" data-tilt="6">
                             <div class="proj-head">
-                                <span class="proj-index">/07</span>
-                                <div class="proj-actions">
-                                    <span class="icon-btn" aria-hidden="true"><i class="fas fa-robot"></i></span>
-                                </div>
-                            </div>
-                            <h3>Warehouse Robot Software</h3>
-                            <p>Autonomous warehouse robot control with navigation, task scheduling and real-time monitoring.</p>
-                            <div class="chips"><span class="chip">Robotics</span><span class="chip">Embedded</span><span class="chip">Automation</span></div>
-                        </article>
-
-                        <article class="card proj reveal" data-tilt="4">
-                            <div class="proj-head">
-                                <span class="proj-index">/08</span>
+                                <span class="proj-index">/09</span>
                                 <div class="proj-actions">
                                     <a href="https://github.com/Teamro04/firmware1.0/" target="_blank" class="icon-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
                                 </div>
                             </div>
+                            <div class="proj-big" aria-hidden="true">09</div>
                             <h3>RO-04 Robot</h3>
                             <p>Robotics Dojo 2022 competition entry: line following, obstacle avoidance and maze solving.</p>
                             <div class="chips"><span class="chip">C/C++</span><span class="chip">Arduino</span><span class="chip">Robotics</span></div>
                         </article>
+                    </div>
 
-                        <article class="card proj reveal" data-tilt="4">
+                    <div class="proj-slot">
+                        <article class="card proj" data-tilt="6">
                             <div class="proj-head">
-                                <span class="proj-index">/09</span>
+                                <span class="proj-index">/10</span>
                                 <div class="proj-actions">
                                     <a href="https://github.com/astianmuchui" target="_blank" class="icon-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
                                 </div>
                             </div>
+                            <div class="proj-big" aria-hidden="true">10</div>
                             <h3>Unix Shell Interpreter</h3>
                             <p>Custom Unix shell in C with interactive and non-interactive modes, built-ins and PATH resolution.</p>
                             <div class="chips"><span class="chip">C</span><span class="chip">Systems</span><span class="chip">ALX</span></div>
                         </article>
+                    </div>
 
-                        <article class="card proj reveal" data-tilt="4">
+                    <div class="proj-slot">
+                        <article class="card proj" data-tilt="6">
                             <div class="proj-head">
-                                <span class="proj-index">/10</span>
+                                <span class="proj-index">/11</span>
                                 <div class="proj-actions">
                                     <span class="badge">Archived</span>
                                     <a href="https://github.com/astianmuchui/Halcyon.css" target="_blank" class="icon-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
                                 </div>
                             </div>
+                            <div class="proj-big" aria-hidden="true">11</div>
                             <h3>Halcyon CSS</h3>
                             <p>A minimal CSS library for building user interfaces fast, available via CDN.</p>
                             <div class="chips"><span class="chip">CSS</span><span class="chip">Library</span></div>
                         </article>
                     </div>
                 </div>
+                <div class="proj-counter" id="proj-counter"><b>01</b>/ 11</div>
             </section>
 
-            <!-- Gallery -->
-            <section id="lab" class="section glow-top">
-                <div class="container">
-                    <div class="section-head">
-                        <span class="eyebrow">06 / in the lab</span>
-                        <h2 class="h2" data-words>Off the screen.</h2>
-                        <p class="lead reveal" style="--d:.2s">Breadboards, robots and rooms full of builders. Hover to bring them to life.</p>
-                    </div>
-
-                    <div class="gallery" data-stagger="0.06">
-                        <figure class="photo tall reveal zoom"><img src="./img/web/img-20240912-wa0007.jpg" alt="Sebastian at his laptop" loading="lazy"><figcaption>~/desk</figcaption></figure>
-                        <figure class="photo wide reveal zoom"><img src="./img/web/robot.jpg" alt="RO-04 robot with green underglow" loading="lazy"><figcaption>ro-04 · robotics dojo</figcaption></figure>
-                        <figure class="photo reveal zoom"><img src="./img/web/img-20241114-124259-233.jpg" alt="Logic circuit on a breadboard" loading="lazy"><figcaption>logic gates</figcaption></figure>
-                        <figure class="photo tall reveal zoom"><img src="./img/web/session.jpg" alt="Sebastian leading a workshop session" loading="lazy"><figcaption>gdsc session</figcaption></figure>
-                        <figure class="photo reveal zoom"><img src="./img/web/img-4488.jpg" alt="Sebastian at a tech event" loading="lazy"><figcaption>community</figcaption></figure>
-                        <figure class="photo wide reveal zoom"><img src="./img/web/solder.jpg" alt="Late-night soldering session" loading="lazy"><figcaption>late-night firmware</figcaption></figure>
-                        <figure class="photo reveal zoom"><img src="./img/web/img-20230928-wa0063.jpg" alt="Workshop attendees with laptops" loading="lazy"><figcaption>workshop</figcaption></figure>
-                        <figure class="photo reveal zoom"><img src="./img/web/img-20241202-114720-373.jpg" alt="Breadboard circuit with LEDs" loading="lazy"><figcaption>prototyping</figcaption></figure>
-                    </div>
+            <!-- Lab -->
+            <section id="lab" class="lab" data-shape="galaxy" data-label="Lab" data-idx="05">
+                <div class="container lab-intro">
+                    <p class="cmd"><span class="prompt">➜</span><span class="path">~</span><span data-type>open ~/lab --3d</span></p>
+                    <h2 class="h2" data-flip>Off the <span class="grad-text">screen.</span></h2>
+                    <p class="lead" data-type>Breadboards, robots and rooms full of builders. Hover a photo to bring it to life.</p>
                 </div>
+
+                <div class="tunnel" id="tunnel">
+                    <figure class="photo t-item tall" data-cursor="HOVER"><img src="img/web/img-20240912-wa0007.webp" alt="Sebastian at his laptop" width="675" height="900" loading="lazy" decoding="async"><figcaption>~/desk</figcaption></figure>
+                    <figure class="photo t-item wide" data-cursor="HOVER"><img src="img/web/robot.webp" alt="RO-04 robot" width="900" height="405" loading="lazy" decoding="async"><figcaption>ro-04 · robotics dojo</figcaption></figure>
+                    <figure class="photo t-item" data-cursor="HOVER"><img src="img/web/img-20241114-124259-233.webp" alt="Logic circuit on a breadboard" width="900" height="900" loading="lazy" decoding="async"><figcaption>logic gates</figcaption></figure>
+                    <figure class="photo t-item tall" data-cursor="HOVER"><img src="img/web/session.webp" alt="Sebastian leading a workshop session" width="629" height="900" loading="lazy" decoding="async"><figcaption>gdsc session</figcaption></figure>
+                    <figure class="photo t-item" data-cursor="HOVER"><img src="img/web/img-4488.webp" alt="Sebastian at a tech event" width="900" height="600" loading="lazy" decoding="async"><figcaption>community</figcaption></figure>
+                    <figure class="photo t-item wide" data-cursor="HOVER"><img src="img/web/solder.webp" alt="Late-night soldering session" width="900" height="405" loading="lazy" decoding="async"><figcaption>late-night firmware</figcaption></figure>
+                    <figure class="photo t-item" data-cursor="HOVER"><img src="img/web/img-20230928-wa0063.webp" alt="Workshop attendees with laptops" width="900" height="405" loading="lazy" decoding="async"><figcaption>workshop</figcaption></figure>
+                    <figure class="photo t-item" data-cursor="HOVER"><img src="img/web/img-20241202-114720-373.webp" alt="Breadboard circuit with LEDs" width="900" height="675" loading="lazy" decoding="async"><figcaption>prototyping</figcaption></figure>
+                    <figure class="photo t-item wide" data-cursor="HOVER"><img src="img/web/robot-pcb.webp" alt="Warehouse robot controller PCB" width="900" height="506" loading="lazy" decoding="async"><figcaption>robot pcb · esp32</figcaption></figure>
+                    <figure class="photo t-item wide" data-cursor="HOVER"><img src="img/web/robot-dashboard.webp" alt="Warehouse robot web dashboard" width="900" height="507" loading="lazy" decoding="async"><figcaption>robot console · go fiber</figcaption></figure>
+                </div>
+
+                <div class="lab-frame" aria-hidden="true">
+                    <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+                </div>
+                <div class="lab-hud" aria-hidden="true"><span>DEPTH <b id="lab-depth">0000</b> m</span><span>REEL <b id="lab-frame-no">00</b> / 10</span></div>
+                <div class="lab-outro" aria-hidden="true">// end of reel</div>
             </section>
 
             <!-- Writing -->
-            <section id="writing" class="section glow-top">
+            <section id="writing" class="section" data-shape="wave" data-label="Writing" data-idx="06">
+                <span class="sec-num" data-speed="0.5" aria-hidden="true">06</span>
                 <div class="container">
                     <div class="section-head">
-                        <span class="eyebrow">07 / writing</span>
-                        <h2 class="h2" data-words>Notes on <span class="grad-text">Medium.</span></h2>
-                        <p class="lead reveal" style="--d:.2s">I write about systems programming, IoT, Go and life in tech.</p>
+                        <p class="cmd"><span class="prompt">➜</span><span class="path">~</span><span data-type>tail -f ~/medium.log</span></p>
+                        <h2 class="h2" data-flip>Notes on <span class="grad-text">Medium.</span></h2>
+                        <p class="lead" data-type>I write about systems programming, IoT, Go and life in tech.</p>
                     </div>
 
-                    <div class="posts" data-stagger="0.08">
-                        <a href="https://astianmuchui.medium.com/mqtt-protocol-implementation-in-go-ec4edfa315d2" target="_blank" class="card post reveal">
-                            <div class="meta"><span><i class="fab fa-medium"></i> MEDIUM</span><span>GO · IOT</span></div>
-                            <h3>MQTT Protocol Implementation in Go</h3>
-                            <p>A deep dive into implementing MQTT for IoT in Go: connection handling, publishing and subscription management.</p>
-                            <span class="read">read article <i class="fas fa-arrow-right"></i></span>
+                    <div class="posts-list">
+                        <a href="https://astianmuchui.medium.com/when-you-need-more-than-one-database-polyglot-persistence-from-an-iot-perspective-110b72461f3d" target="_blank" class="post-row" data-cursor="READ">
+                            <span class="pr-idx">01</span>
+                            <span><span class="pr-title">When You Need More Than One Database: Polyglot Persistence from an IoT Perspective</span><span class="pr-desc">Why some IoT data is written once and rarely read, and how to match each kind of data to the store that fits it.</span></span>
+                            <span class="pr-tags">DATABASES · IOT</span>
+                            <span class="pr-arrow"><i class="fas fa-arrow-right"></i></span>
                         </a>
-                        <a href="https://astianmuchui.medium.com/build-a-simple-user-registration-and-login-system-using-go-fiber-d3d239753039" target="_blank" class="card post reveal">
-                            <div class="meta"><span><i class="fab fa-medium"></i> MEDIUM</span><span>GO · WEB</span></div>
-                            <h3>Build a User Registration &amp; Login System with Go Fiber</h3>
-                            <p>A step-by-step guide to authentication with Go Fiber: registration, login, password hashing and sessions.</p>
-                            <span class="read">read article <i class="fas fa-arrow-right"></i></span>
+                        <a href="https://astianmuchui.medium.com/introduction-to-server-sent-events-sse-af29b35b5293" target="_blank" class="post-row" data-cursor="READ">
+                            <span class="pr-idx">02</span>
+                            <span><span class="pr-title">Introduction to Server-Sent Events (SSE)</span><span class="pr-desc">Pushing live updates from server to dashboard, starting from a home-automation example, in Go.</span></span>
+                            <span class="pr-tags">GO · SSE</span>
+                            <span class="pr-arrow"><i class="fas fa-arrow-right"></i></span>
                         </a>
-                        <a href="https://astianmuchui.medium.com/no-ethernet-port-and-still-want-to-install-arch-no-problem-0a58152d952b" target="_blank" class="card post reveal">
-                            <div class="meta"><span><i class="fab fa-medium"></i> MEDIUM</span><span>LINUX</span></div>
-                            <h3>No Ethernet Port? Installing Arch Linux over WiFi</h3>
-                            <p>A practical guide to installing Arch Linux on machines without an ethernet port, using wireless networking.</p>
-                            <span class="read">read article <i class="fas fa-arrow-right"></i></span>
+                        <a href="https://astianmuchui.medium.com/no-ethernet-port-and-still-want-to-install-arch-no-problem-0a58152d952b" target="_blank" class="post-row" data-cursor="READ">
+                            <span class="pr-idx">03</span>
+                            <span><span class="pr-title">No Ethernet Port? Installing Arch Linux over WiFi</span><span class="pr-desc">Installing Arch on machines without an ethernet port, using wireless networking.</span></span>
+                            <span class="pr-tags">LINUX</span>
+                            <span class="pr-arrow"><i class="fas fa-arrow-right"></i></span>
                         </a>
-                        <a href="https://astianmuchui.medium.com/my-journey-in-tech-part-iv-the-bootcamp-3722980819ac" target="_blank" class="card post reveal">
-                            <div class="meta"><span><i class="fab fa-medium"></i> MEDIUM</span><span>CAREER</span></div>
-                            <h3>My Journey in Tech Part IV: The Bootcamp</h3>
-                            <p>Reflections on the ALX Software Engineering bootcamp, intensive learning and growth from long-term commitment.</p>
-                            <span class="read">read article <i class="fas fa-arrow-right"></i></span>
+                        <a href="https://astianmuchui.medium.com/mqtt-protocol-implementation-in-go-ec4edfa315d2" target="_blank" class="post-row" data-cursor="READ">
+                            <span class="pr-idx">04</span>
+                            <span><span class="pr-title">MQTT Protocol Implementation in Go</span><span class="pr-desc">Connection handling, publishing and subscription management for IoT, in Go.</span></span>
+                            <span class="pr-tags">GO · MQTT</span>
+                            <span class="pr-arrow"><i class="fas fa-arrow-right"></i></span>
+                        </a>
+                        <a href="https://astianmuchui.medium.com/build-a-simple-user-registration-and-login-system-using-go-fiber-d3d239753039" target="_blank" class="post-row" data-cursor="READ">
+                            <span class="pr-idx">05</span>
+                            <span><span class="pr-title">User Registration &amp; Login with Go Fiber</span><span class="pr-desc">Registration, login, password hashing and sessions, step by step.</span></span>
+                            <span class="pr-tags">GO · WEB</span>
+                            <span class="pr-arrow"><i class="fas fa-arrow-right"></i></span>
+                        </a>
+                        <a href="https://astianmuchui.medium.com/my-journey-in-tech-part-iv-the-bootcamp-3722980819ac" target="_blank" class="post-row" data-cursor="READ">
+                            <span class="pr-idx">06</span>
+                            <span><span class="pr-title">My Journey in Tech Part IV: The Bootcamp</span><span class="pr-desc">Reflections on the ALX bootcamp, intensive learning and long-term commitment.</span></span>
+                            <span class="pr-tags">CAREER</span>
+                            <span class="pr-arrow"><i class="fas fa-arrow-right"></i></span>
                         </a>
                     </div>
-                    <div class="reveal" style="margin-top:32px">
-                        <a href="https://medium.com/@astianmuchui" target="_blank" class="btn btn-ghost"><i class="fab fa-medium"></i> More on Medium <i class="fas fa-arrow-right arrow"></i></a>
+                    <div class="more-row">
+                        <a href="https://medium.com/@astianmuchui" target="_blank" class="btn btn-ghost" data-magnetic><i class="fab fa-medium"></i> More on Medium <i class="fas fa-arrow-right arrow"></i></a>
                     </div>
                 </div>
             </section>
 
             <!-- Contact -->
-            <section id="contact" class="section">
+            <section id="contact" class="section contact" data-shape="ring" data-label="Contact" data-idx="07">
                 <div class="container">
-                    <div class="contact-box reveal zoom">
-                        <span class="ring"></span>
-                        <span class="ring" style="animation-delay:2s"></span>
-                        <span class="ring" style="animation-delay:4s"></span>
-                        <span class="eyebrow">08 / contact</span>
-                        <h2 class="h2" data-words>Let's build <span class="grad-text">something.</span></h2>
-                        <p class="lead">Got a project in mind, need an IoT solution, or just want to connect? I'm always
-                            open to conversations about technology and collaboration.</p>
-                        <div class="contact-actions">
-                            <a href="mailto:astianmuchui@gmail.com" class="btn btn-primary" data-magnetic><i class="far fa-envelope"></i> astianmuchui@gmail.com</a>
-                            <a href="https://calendly.com/astianmuchui" target="_blank" class="btn btn-ghost" data-magnetic><i class="fas fa-calendar"></i> Schedule a call</a>
-                        </div>
-                        <div class="contact-meta">
-                            <span><i class="fas fa-phone"></i> +254 797 061 691 / +254 716 590 423</span>
-                            <a href="https://linkedin.com/in/astianmuchui" target="_blank">linkedin ↗</a>
-                            <a href="https://github.com/astianmuchui" target="_blank">github ↗</a>
-                            <a href="https://x.com/astianmuchui" target="_blank">x ↗</a>
-                        </div>
+                    <p class="cmd"><span class="prompt">➜</span><span class="path">~</span><span data-type>ping sebastian --now</span></p>
+                    <div class="mega-wrap">
+                        <h2 class="mega" data-flip>Let's build <span class="grad-text">something.</span></h2>
+                    </div>
+                    <p class="lead" data-type>Got a project in mind, need an IoT solution, or just want to connect? I'm always open to conversations about technology and collaboration.</p>
+                    <div class="contact-actions">
+                        <a href="mailto:astianmuchui@gmail.com" class="btn btn-primary" data-magnetic><i class="far fa-envelope"></i> astianmuchui@gmail.com</a>
+                        <a href="https://calendly.com/astianmuchui" target="_blank" class="btn btn-ghost" data-magnetic><i class="fas fa-calendar"></i> Schedule a call</a>
+                    </div>
+                    <div class="contact-meta">
+                        <span><i class="fas fa-phone"></i> +254 797 061 691 / +254 716 590 423</span>
+                        <a href="https://linkedin.com/in/astianmuchui" target="_blank">linkedin ↗</a>
+                        <a href="https://github.com/astianmuchui" target="_blank">github ↗</a>
+                        <a href="https://x.com/astianmuchui" target="_blank">x ↗</a>
                     </div>
 
-                    <div class="card sponsor reveal">
+                    <div class="card sponsor">
                         <div>
                             <h3><i class="fas fa-heart"></i> Support my work</h3>
                             <p>If my open-source projects or articles have been useful to you, consider sponsoring me on GitHub.</p>
@@ -732,17 +786,18 @@
         </main>
 
         <footer class="footer">
-            <div class="container">
-                <div class="footer-row">
-                    <span>© 2026 Sebastian Muchui</span>
-                    <span class="status"><span class="dot"></span>all systems operational</span>
-                    <a href="https://astianmuchui.tech" class="mono">astianmuchui.tech</a>
-                </div>
-                <div class="footer-big" aria-hidden="true">MUCHUI</div>
+            <div class="container footer-row">
+                <span>© 2026 Sebastian Muchui</span>
+                <a href="#top" class="mono">back to top ↑</a>
+                <a href="https://astianmuchui.tech" class="mono">astianmuchui.tech</a>
             </div>
+            <div class="footer-big" aria-hidden="true"><span class="fade-text">MUCHUI</span></div>
         </footer>
 
-        <script src="js/site.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" crossorigin defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" crossorigin defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" crossorigin defer></script>
+        <script src="js/site.js" defer></script>
     </body>
 
 </html>
